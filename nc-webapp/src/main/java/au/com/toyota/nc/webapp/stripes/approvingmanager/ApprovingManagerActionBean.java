@@ -67,6 +67,8 @@ public class ApprovingManagerActionBean extends BaseDealerLocationActionBean {
 
 	private List<ChangeAppointment> changeAppointment;
 	
+	List<ChangeAppointment> toBeSavedList;
+	
 	private StringBuilder trainingMgrPersonIdList = new StringBuilder();
 
 	@DefaultHandler
@@ -78,20 +80,28 @@ public class ApprovingManagerActionBean extends BaseDealerLocationActionBean {
 	public void validateAppointments() {
 		List<Appointment> aptsList = new ArrayList<Appointment>();
 		
+		toBeSavedList = GetChangedAppointments();
+		
 		if (changeAppointment == null)
 			changeAppointment = new ArrayList<ChangeAppointment>();
 		
 		for (ChangeAppointment apt : changeAppointment) {
-			if (!validateTrainingMgr(apt)) {
-				addLocalizableGlobalError("validation.trainingApprovalManager.not.valid");
-			}
-			
+			validateTrainingMgr(apt);
+				
 			if ((!StringUtils.isEmpty(apt.getTrainPersonId())) &&  (!StringUtils.isEmpty(apt.getPersonId())))  
 			{				
 				if (Long.parseLong(apt.getPersonId()) == Long.parseLong(apt.getTrainPersonId()))
 				{
 					addLocalizableGlobalError("validation.trainingApprovalManager.of.self");
 				}	
+			}
+			
+			if (toBeSavedList.contains(apt))
+			{
+				if  (!checkLoop(apt, 5))
+			    {
+			    	addLocalizableGlobalError("validation.trainingApprovalManager.loop", new Object[]{apt.getAppointmentDescription()});
+			    }
 			}
 		
 			
@@ -121,6 +131,7 @@ public class ApprovingManagerActionBean extends BaseDealerLocationActionBean {
 			aptsList.add(appointment);
 
 		}
+		
 		appointments = aptsList;
 
 	}
@@ -128,9 +139,7 @@ public class ApprovingManagerActionBean extends BaseDealerLocationActionBean {
 	@HandlesEvent(EVENT_APPOINTMENT_SAVE)
 	public Resolution saveAppointments() throws IOException // userFile.getReader
 															// throws this
-	{
-		List<ChangeAppointment> toBeSavedList = GetChangedAppointments();
-		
+	{	
 		appointmentServices.saveTrainMgr(toBeSavedList);
 		
 		List<Appointment> aptsList = new ArrayList<Appointment>();
@@ -350,16 +359,22 @@ public class ApprovingManagerActionBean extends BaseDealerLocationActionBean {
 	}
 
 	private boolean validateTrainingMgr(ChangeAppointment changeAppointment) {
+		Appointment appontment = appointmentServices.get(Long
+				.parseLong(changeAppointment.getId()));
 		if ((changeAppointment.getTrainMgr() == null)
 				|| ("".equals(changeAppointment.getTrainMgr()))) {
-			Appointment appontment = appointmentServices.get(Long
-					.parseLong(changeAppointment.getId()));
-
 			if (!appontment.isDpGmrAppointment()) {
+				addLocalizableGlobalError("validation.trainingApprovalManager.not.valid");
 				return false;
 			}
 
 		} else {
+			
+			if (appontment.isDpGmrAppointment()) {
+				addLocalizableGlobalError("validation.trainingApprovalManager.no.need");
+				return false;
+			}
+			
 			Long trainingMgrId = Long
 					.parseLong(changeAppointment.getTrainMgr());
 
@@ -367,6 +382,7 @@ public class ApprovingManagerActionBean extends BaseDealerLocationActionBean {
 				getTrainningMgrList();
 
 			if (!trainingMgrIdMap.keySet().contains(trainingMgrId)) {
+				addLocalizableGlobalError("validation.trainingApprovalManager.not.valid");
 				return false;
 			}
 
@@ -400,4 +416,65 @@ public class ApprovingManagerActionBean extends BaseDealerLocationActionBean {
 		}
 		return toBeSavedList;
 	}
+	
+	private boolean checkLoop(ChangeAppointment apt, int limit ){
+		
+		String selfId = apt.getPersonId(); 
+		
+		
+		for (int i=0; i<limit; i++)
+		{
+			//if there is no training manager, the check is OK
+			if (apt.getTrainMgr() == null) 
+			{
+			    return true;	
+			}
+			
+            //cannot select as training manager 
+			if (selfId.equals(apt.getTrainPersonId()))
+			{	
+				return false;
+			}
+									
+		    boolean found = false;
+		    
+		    
+		    //First check the web page
+		    for (ChangeAppointment apt1: changeAppointment)
+		    {
+		    	if (apt.getTrainMgr().equals( apt1.getId()))
+		    	{
+		    		apt = apt1;
+		    		found = true;
+		    		break;
+		    	}
+		    }
+		    
+		    if (!found)
+		    {
+		    	Appointment appointment = appointmentServices.get(Long.parseLong(apt.getTrainMgr())); 
+		    	
+		    	if ((appointment.getTrainingManager() == null) || (appointment.getTrainingManager().getAppointmentId() == -1)) 
+		    	{
+		    		return true;
+		    	}
+		    	
+		    	if (appointment.getTrainingManager().getPerson()==null)
+		    	{
+		    		return true;
+		    	}		    	
+		    	
+		    	apt = new ChangeAppointment();
+		    		   
+		    	apt.setTrainMgr(appointment.getTrainingManager().getAppointmentId()+"");
+		    	
+		    	apt.setId(appointment.getAppointmentId()+"");
+		    			    	
+		    	apt.setTrainPersonId(appointment.getTrainingManager().getPerson().getPersonId()+"");
+		    }
+		}
+		
+		return true;		
+	}
+	
 }

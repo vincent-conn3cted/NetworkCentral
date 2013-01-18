@@ -19,8 +19,13 @@
 					var selectedDesc = $(this).find("option:selected").text();
 					var appointmentId =  $('table input[type="hidden"][name$="\.id"]:eq(' + index + ')').val();
 					var appointmentPersonId =  $('table input[type="hidden"][name$="\.personId"]:eq(' + index + ')').val();
+					var dpGmrFlag =  $('table input[type="hidden"][name$="\.dpGmrFlag"]:eq(' + index + ')').val();
+					
 					
 					if (selctedPersonId == appointmentPersonId ) {
+						$(this).css("background-color", "#ff8080");
+					}
+					else if ((jQuery.inArray(selctedPersonId, list) >= 0) &&  (dpGmrFlag == "true")) {
 						$(this).css("background-color", "#ff8080");
 					}
 					
@@ -517,19 +522,33 @@
 													</c:if>
 												</c:otherwise>
 											</c:choose>
+											
+											
 											<c:forEach items="${actionBean.trainningMgrList}"
 												var="trainningMgr">
-												<c:choose>
-													<c:when
-														test="${appointment.trainingManager.appointmentId==trainningMgr.appointment_id}">
-														<option value="${trainningMgr.appointment_id}"
-															selected="selected" personId="${trainningMgr.personId}">${trainningMgr.description}</option>
-													</c:when>
-													<c:otherwise>
-														<option value="${trainningMgr.appointment_id}" personId="${trainningMgr.personId}">${trainningMgr.description}</option>
-													</c:otherwise>
-												</c:choose>
-											</c:forEach>
+												<c:if test="${not appointment.dpGmrFlag}">
+													<c:choose>
+														<c:when
+															test="${appointment.trainingManager.appointmentId==trainningMgr.appointment_id}">
+															<option value="${trainningMgr.appointment_id}"
+																selected="selected" personId="${trainningMgr.personId}">${trainningMgr.description}</option>
+														</c:when>
+														<c:otherwise>
+															<option value="${trainningMgr.appointment_id}" personId="${trainningMgr.personId}">${trainningMgr.description}</option>
+														</c:otherwise>
+													</c:choose>
+												</c:if>
+												<c:if test="${appointment.dpGmrFlag}">
+													<c:choose>
+														<c:when
+															test="${appointment.trainingManager.appointmentId==trainningMgr.appointment_id}">
+															<option value="${trainningMgr.appointment_id}"
+																selected="selected" personId="${trainningMgr.personId}">${trainningMgr.description}</option>
+														</c:when>
+													</c:choose>
+												</c:if>
+											 </c:forEach>
+											
 										</select>
 										
 										<c:choose>

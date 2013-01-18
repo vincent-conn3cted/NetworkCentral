@@ -4,6 +4,7 @@ import static java.util.Arrays.asList;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.mail.internet.AddressException;
@@ -27,6 +28,7 @@ import org.joda.time.DateTime;
 import au.com.toyota.nc.common.comparartors.GenericComparator;
 import au.com.toyota.nc.common.dealers.exceptions.InvalidDealerException;
 import au.com.toyota.nc.common.helper.AppointmentHelper;
+import au.com.toyota.nc.common.model.ChangeAppointment;
 import au.com.toyota.nc.common.model.DateRange;
 import au.com.toyota.nc.common.model.DealerStaffSearchRequest;
 import au.com.toyota.nc.common.model.DealerStaffSearchResponse;
@@ -612,6 +614,12 @@ public class DealerStaffPositionActionBean extends BaseActionBean
     private void validateTrainingManager(boolean includeLocalizableValidationError){
     	
         if(getAppointment().getTrainingManager() != null && getAppointment().getTrainingManager().getAppointmentId() != -1){
+        	
+        	if (getAppointment().isDpGmrAppointment())
+        	{
+        		addLocalizableGlobalError("validation.trainingApprovalManager.no.need");
+        	}
+        	
     		List<Appointment> result = appointmentServices
     		.findActiveTrainingManagerAppointmentById(getAppointment().getTrainingManager().getAppointmentId());
     		
@@ -656,6 +664,13 @@ public class DealerStaffPositionActionBean extends BaseActionBean
 			? getAppointment().getTrainingManager().getAppointmentId() 
 			: null;
 			
+		if  (getAppointment().isDpGmrAppointment())
+		{
+			List<TrainingApprovalMgr> result = new ArrayList<TrainingApprovalMgr>();
+			return result;
+		}
+			
+			
 		setSelectedDealerIdIfAvailable();
 			
 		if(currentAppointmentTrainingManagerId == null){
@@ -663,6 +678,15 @@ public class DealerStaffPositionActionBean extends BaseActionBean
 		}else{
 			trainingManagers = getTrainingManagerIncludingCurrentAppointment(selectedDealerId, currentAppointmentTrainingManagerId);
 		}
+		
+		Iterator<TrainingApprovalMgr> iter = trainingManagers.iterator();
+		while (iter.hasNext()) {
+			if (!checkLoop(getAppointment(), iter.next(), 5 ))
+			{
+				iter.remove();
+			}
+		}
+		
 		return trainingManagers;
 	}
 
@@ -684,5 +708,56 @@ public class DealerStaffPositionActionBean extends BaseActionBean
 	public void setDpGmrFlag(Long dpGmrFlag) {
 		this.dpGmrFlag = dpGmrFlag;
 	}
+	
+	private boolean checkLoop(Appointment apt, TrainingApprovalMgr trainMgr,  int limit ){
+		
+		//if the appointment is new, by no means it can cause a loop
+		if ((apt.getAppointmentId() == null) || (apt.getAppointmentId() == -1))
+			return true;
+		
+		//if the training manager is null, the check is successful.
+		if (trainMgr == null)
+			return true;
+		
+		if (apt.getPerson() == null)
+            return true;
+		
+		Long selfId = apt.getPerson().getPersonId();
+		
+		Appointment apt1 = appointmentServices.get(trainMgr.getAppointment_id()); 
+		
+		if (apt1.getPerson() == null)
+			return true;
+		
+		//cannot select itself as training manager.
+		if (apt.getPerson().getPersonId().equals(apt1.getPerson().getPersonId()))
+			return false;
+		
+		
+		apt = apt1;
+				
+		
+		for (int i=0; i<limit; i++)
+		{
+			if ((apt.getTrainingManager() == null) ||  (apt.getTrainingManager().getAppointmentId() == -1))
+			{
+			    return true;	
+			}
+			
+			if ((apt.getTrainingManager().getPerson() == null))
+			{
+			    return true;	
+			}
 
+			if (selfId.equals(apt.getTrainingManager().getPerson().getPersonId()))
+			{
+				return false;
+			}
+									
+		    apt = appointmentServices.get(apt.getTrainingManager().getAppointmentId()); 
+		    			    	
+		}
+		
+		return true;		
+	}
 }
