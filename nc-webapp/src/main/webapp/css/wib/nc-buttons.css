@@ -1,0 +1,222 @@
+input.btn{
+    border:0 none;
+    cursor:pointer;
+    overflow:hidden;
+    float:left;
+}
+
+/** Short buttons */
+                                                                               
+input.btn_search{
+    background: transparent url("../../images/wib/s_button_search.gif") no-repeat scroll 0 0;
+    padding-left:2px;
+    padding-top:20px;
+    height:18px;
+    width:69px;
+}
+
+input.btn_export{
+    background: transparent url("../../images/wib/s_button_export.gif") no-repeat scroll 0 0;
+    padding-left:2px;
+    padding-top:20px;
+    height:18px;
+    width:69px;
+}
+input.btn_add{
+    background: transparent url("../../images/wib/s_button_add.gif") no-repeat scroll 0 0;
+    padding-left:2px;
+    padding-top:20px;
+    height:18px;
+    width:69px;
+}
+input.btn_exit{
+    background: transparent url("../../images/wib/s_button_exit.gif") no-repeat scroll 0 0;
+    padding-left:2px;
+    padding-top:20px;
+    height:18px;
+    width:69px;
+}
+input.btn_change{
+   background: transparent url("../../images/wib/s_button_change.gif") no-repeat scroll 0 0;
+    padding-left:2px;
+    padding-top:20px;
+    height:18px;
+    width:69px;
+}
+
+
+input.btn_login{
+    background:transparent url("../../images/wib/s_button_login.gif") no-repeat scroll 0 0;
+    height:18px;
+    width:69px;
+    padding-left:2px;
+    padding-top:20px;
+}
+
+input.btn_reset{
+    background:transparent url("../../images/wib/s_button_reset.gif") no-repeat scroll 0 0;
+    height:18px;
+    width:69px;
+    padding-left:2px;
+    padding-top:20px;
+}
+
+input.btn_save{
+    background:transparent url("../../images/wib/s_button_save.gif") no-repeat scroll 0 0;
+    height:18px;
+    width:69px;
+    padding-left:2px;
+    padding-top:20px;
+}
+
+input.btn_cancel{
+    background:transparent url("../../images/wib/s_button_cancel.jpg") no-repeat scroll 0 0;
+    height:18px;
+    width:69px;
+    padding-left:2px;
+    padding-top:20px;
+}
+
+input.btn_ok{
+    background:transparent url("../../images/wib/s_button_ok.gif") no-repeat scroll 0 0;
+    height:18px;
+    width:69px;
+    padding-left:2px;
+    padding-top:20px;
+}
+
+input.btn_schedule{
+      background:transparent url("../../images/wib/s_button_schedule.gif") no-repeat scroll 0 0;
+    height:18px;
+    width:69px;
+    padding-left:2px;
+    padding-top:20px;
+
+}
+input.btn_doNow{
+      background:transparent url("../../images/wib/s_button_doNow.gif") no-repeat scroll 0 0;
+    height:18px;
+    width:69px;
+    padding-left:2px;
+    padding-top:20px;
+}
+
+
+
+/** Long buttons **/
+input.btn_processCancel{
+    background:transparent url("../../images/wib/l_button_process_cancel.gif") no-repeat scroll 0 0;
+    height:18px;
+    width:100px;
+    padding-left:2px;
+    padding-top:20px;
+}
+
+input.btn_exitWithoutCancel{
+    background:transparent url("../../images/wib/l_button_exit_without_cancel.gif") no-repeat scroll 0 0;
+    height:18px;
+    width:120px;
+    padding-left:2px;
+    padding-top:20px;
+}
+
+input.btn_changeStatus{
+    background:transparent url("../../images/wib/l_button_changeStatus.gif") no-repeat scroll 0 0;
+    height:18px;
+    width:100px;
+    padding-left:2px;
+    padding-top:20px;
+}
+input.btn_editSelected{
+    background:transparent url("../../images/wib/l_button_editSelected.gif") no-repeat scroll 0 0;
+    height:18px;
+    width:100px;
+    padding-left:2px;
+    padding-top:20px;
+}
+input.btn_changeStaff{
+     background:transparent url("../../images/wib/l_button_changeStaff.gif") no-repeat scroll 0 0;
+    height:18px;
+    width:100px;
+    padding-left:2px;
+    padding-top:20px;
+}
+input.btn_linkStaff{
+     background:transparent url("../../images/wib/l_button_linkStaff.gif") no-repeat scroll 0 0;
+    height:18px;
+    width:100px;
+    padding-left:2px;
+    padding-top:20px;
+}
+
+
+/** extra long buttons **/
+input.btn_export_mailMerge{
+    background:transparent url("../../images/wib/el_button_export_mailMerge.gif") no-repeat scroll 0 0;
+    height:18px;
+    width:108px;
+    padding-left:2px;
+    padding-top:20px;
+}
+input.btn_saveSearch{
+    background:transparent url("../../images/wib/el_button_saveSearch.gif") no-repeat scroll 0 0;
+    height:18px;
+    width:108px;
+    padding-left:2px;
+    padding-top:20px;
+}
+input.btn_mailingLabel{
+    background:transparent url("../../images/wib/el_button_mailingLabel.gif") no-repeat scroll 0 0;
+    height:18px;
+    width:108px;
+    padding-left:2px;
+    padding-top:20px;
+}
+input.btn_addNewStaff{
+    background:transparent url("../../images/wib/el_button_add_staff.gif") no-repeat scroll 0 0;
+    height:18px;
+    width:108px;
+    padding-left:2px;
+    padding-top:20px;
+}
+input.btn_saveContinue{
+    background:transparent url("../../images/wib/el_button_saveContinue.gif") no-repeat scroll 0 0;
+    height:18px;
+    width:108px;
+    padding-left:2px;
+    padding-top:20px;
+}
+input.btn_saveFinish{
+    background:transparent url("../../images/wib/el_button_saveFinish.gif") no-repeat scroll 0 0;
+    height:18px;
+    width:108px;
+    padding-left:2px;
+    padding-top:20px;
+}
+a#addNewDealerStaffLink{
+    border:0 none;
+    cursor:pointer;
+    overflow:hidden;
+    float:left;
+    text-decoration:none;
+    background:transparent url("../../images/wib/el_button_add_staff.gif") no-repeat scroll 0 0;
+    height:18px;
+    width:108px;
+    padding-left:2px;
+    padding-top:20px;
+}
+
+.default-button {
+    background: transparent url(../../images/wib/buttonTemplate/medium-button.png) no-repeat;
+    color: white;
+    text-align: center;
+    width: 81px;
+    height: 18px;
+    line-height: 18px;
+    margin-top: 10px;
+    cursor: pointer;
+    display: block;
+    float: right;
+    margin-right: 5px;
+    padding-bottom: 5px;
+}

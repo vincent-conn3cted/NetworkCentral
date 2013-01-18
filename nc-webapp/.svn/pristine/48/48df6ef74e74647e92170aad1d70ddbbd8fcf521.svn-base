@@ -1,0 +1,167 @@
+/******************* search page *****************************/
+div#searchDealerPage div#searchFormLayoutSection label {width:150px;float:left;}
+    div#dealerDataTableSection table .yui-dt-col-dealerID{display:none;}
+    div#dealerDataTableSection table .yui-dt-col-locationID{display:none;}
+    div#searchDealerPage div.bulkUpdateResultOption {float:left;}
+
+
+
+
+
+div#dealerLocationDetailsPage{float:left;clear:both;}
+    div#dealerLocationDetailsPage label{width:150px;float:left;} 
+    div#dealerLocationDetailsPage fieldset{float:left;clear:both;width:100%;margin:2px 2px;}
+
+    /** General tab **/
+    div#dealerLocationDetailsPage fieldset#generalInfo-generalSection {width:350px;}
+    div#dealerLocationDetailsPage fieldset#generalInfo-streetAddressSection {width:600px;clear:left;}
+        div#dealerLocationDetailsPage fieldset#generalInfo-streetAddressSection label{width:100px;}
+    div#dealerLocationDetailsPage fieldset#generalInfo-postalAddressSection {width:600px;clear:left;}
+        div#dealerLocationDetailsPage fieldset#generalInfo-postalAddressSection label{width:100px;}
+    div#dealerLocationDetailsPage fieldset#generalInfo-poAddressSection {width:600px;clear:left;}
+        div#dealerLocationDetailsPage fieldset#generalInfo-poAddressSection label{width:100px;}
+    div#dealerLocationDetailsPage fieldset#generalInfo-communicationSection {width:580px;clear:left;}
+    div#dealerLocationDetailsPage fieldset#generalInfo-corporateSection {width:370px;clear:right;}
+    div#dealerLocationDetailsPage fieldset#generalInfo-franchiseSection {width:350px;}
+    div#dealerLocationDetailsPage fieldset#generalInfo-datesSection {width:950px;}
+    div#dealerLocationDetailsPage fieldset#generalInfo-notesSection {width:950px;}
+        div#dealerLocationDetailsPage fieldset#generalInfo-notesSection label{width:100px;}
+        div#dealerLocationDetailsPage fieldset#generalInfo-notesSection textarea{width:750px;}
+
+    /*** TMCA Tab **/
+    div#dealerLocationDetailsPage fieldset#tmcaInfo-generalSection {width:550px;}
+   div#dealerLocationDetailsPage fieldset#tmcaInfo-otherProductsSection {width:300px;}
+   div#dealerLocationDetailsPage fieldset#tmcaInfo-weightGroupsSection {width:450px;clear:left;}
+   div#dealerLocationDetailsPage fieldset#tmcaInfo-customerServiceSection {width:450px;clear:right;}
+   div#dealerLocationDetailsPage fieldset#tmcaInfo-capacitySection-showroom {width:310px;clear:left;}
+   div#dealerLocationDetailsPage fieldset#tmcaInfo-capacitySection-vehicles-new {width:310px;clear:none;}
+   div#dealerLocationDetailsPage fieldset#tmcaInfo-capacitySection-vehicles-used {width:310px;clear:right;}
+    div#dealerLocationDetailsPage  fieldset#tmcaInfo-csdInfoSection{}
+        div#dealerLocationDetailsPage  fieldset#tmcaInfo-csdInfoSection fieldset#tmcaInfo-csdInfoSection-tsm1{width:350px;clear:left;}
+        div#dealerLocationDetailsPage  fieldset#tmcaInfo-csdInfoSection fieldset#tmcaInfo-csdInfoSection-tsm2{width:350px;clear:none; border:none;}
+        div#dealerLocationDetailsPage  fieldset#tmcaInfo-csdInfoSection fieldset#tmcaInfo-csdInfoSection-misc{width:200px;clear:right;}
+
+   div#dealerLocationDetailsPage fieldset#tmcaInfo-dealerGroupMembershipSection {width:450px;clear:left;}
+        div#dealerLocationDetailsPage fieldset#tmcaInfo-dealerGroupMembershipSection label{width:190px;}
+   div#dealerLocationDetailsPage fieldset#tmcaInfo-representativesSection {width:450px;clear:right;}
+   div#dealerLocationDetailsPage fieldset#tmcaInfo-businessImprovementSection {width:200px;clear:both;}
+   div#dealerLocationDetailsPage fieldset#tmcaInfo-serviceTypeSection {width:200px;clear:both;}
+   div#dealerLocationDetailsPage fieldset#tmcaInfo-financialBenchmarkSection {width:200px;clear:both;}
+   div#dealerLocationDetailsPage fieldset#tmcaInfo-dealerSelectCommitteeSection {width:800px;clear:both;}
+       div#dealerLocationDetailsPage fieldset#tmcaInfo-dealerSelectCommitteeSection table#dealerCommitteeTable{width:100%;border:1px black solid;}
+   div#dealerLocationDetailsPage fieldset#tmcaInfo-otherFranchiseSection {width:800px;clear:both;}
+       div#dealerLocationDetailsPage fieldset#tmcaInfo-otherFranchiseSection table#otherFranchiseTable{width:100%;border:1px black solid;}
+    div#dealerLocationDetailsPage fieldset#tmcaInfo-deliverySection {width:400px;clear:both;}
+        div#dealerLocationDetailsPage fieldset#tmcaInfo-deliverySection label {width:200px;}
+
+
+   div#addOtherFranchiseDialog{}
+       div#addOtherFranchiseDialog label{width:150px;}
+   div#dealerLocationDetailsPage fieldset#tmcaInfo-franchiseSection {width:300px;}
+       div#dealerLocationDetailsPage fieldset#tmcaInfo-franchiseSection label{width:150px;}
+
+    /*** Locations Tab **/
+    div#dealerLocationDetailsPage fieldset#locationInfo-locationSection {width:800px;}
+        div#dealerLocationDetailsPage fieldset#locationInfo-locationSection table#locationTable{width:100%;}
+
+
+
+    /*** Legal Tab **/
+    div#dealerLocationDetailsPage fieldset#legalInfo-dealerAgreementSection {width:500px;}
+    div#dealerLocationDetailsPage fieldset#legalInfo-financialInformationSection {width:500px;}
+    div#dealerLocationDetailsPage fieldset#legalInfo-ownershipDetailsSection {width:500px;}
+    div#dealerLocationDetailsPage fieldset#legalInfo-specialConditionSection {width:950px;}
+        div#dealerLocationDetailsPage fieldset#legalInfo-specialConditionSection table#specialConditionTable {width:100%;}
+
+    /*** Identification Number Tab **/
+    div#dealerLocationDetailsPage fieldset#identificationInfo-generalSection{width:400px;}
+        div#dealerLocationDetailsPage fieldset#identificationInfo-generalSection label{width:200px;}
+
+      div#addSpecialConditionDialog {width:540px;}
+            div#addSpecialConditionDialog label{width:150px !important;} /** dont let page level specification on label width override this width **/
+
+    /*** Awards Tab **/
+    div#dealerLocationDetailsPage fieldset#awardsInfo-awardsSection{width:800px;}
+        div#dealerLocationDetailsPage fieldset#awardsInfo-awardsSection table{width:100%;}
+    div#addAwardDialog {width:400px;}
+        div#addAwardDialog label{width:100px !important;}
+
+    /*** Files Tab **/
+    div#dealerLocationDetailsPage fieldset#filesInfo-generalSection{width:950px;}
+
+    table#fileTable td{text-align:left;}
+    table#fileTable th.documentNameColumn{width:200px;}
+    table#fileTable th.documentTypeColumn{width:100px;}
+    table#fileTable th.documentURLColumn{width:300px;}
+    table#fileTable th.documentCreatedDateColumn{width:150px;}
+
+    div#addDocumentDialog {width:400px;}
+        div#addDocumentDialog label{width:80px !important;} /** dont let page level specification on label width override this width **/
+
+   /***  System Information Tab **/
+    div#dealerLocationDetailsPage fieldset#systemInfo-systemSection{width:500px;}
+    div#dealerLocationDetailsPage fieldset#systemInfo-rddAgreementSection{width:480px;clear:left;}
+    div#dealerLocationDetailsPage fieldset#systemInfo-dmsSection{width:480px;clear:right;}
+
+    /**** Marketing Tab **/
+    div#dealerLocationDetailsPage fieldset#marketingInfo-subscriptionSection{width:800px;}
+        div#dealerLocationDetailsPage fieldset#marketingInfo-subscriptionSection table#subscriptionTable{width:100%;}
+
+    div#addSubscriptionDialog {width:350px;}
+        div#addSubscriptionDialog label {width:130px !important;} /** dont let page level specification on label width override this width **/
+
+
+/****************** dealer & location details page *************************/
+div#dealerTabsNav{clear:both;float:left; width:100%;}
+    div#dealerTabsNav ul{list-style:none;padding-left:0;}
+    div#dealerTabsNav ul li{ display:inline;}
+
+div#locationTabsNav{clear:both;float:left;width:100%;}
+    div#locationTabsNav ul{list-style:none;padding-left:0;}
+    div#locationTabsNav ul li{ display:inline;}
+
+
+/**
+   Header - tabs & the buttons
+**/
+div#dealerLocationDetailsHeader{float:left;clear:both;width:100%;}
+    div#dealerLocationDetailsHeader #dealerLocationName{ float: left; font-weight:bold; font-size:1.1em;}
+    div#dealerLocationDetailsHeader #dealerLocationToolbar{ float: right; }
+        div#dealerLocationDetailsHeader #dealerLocationToolbar #saveButtonSection{ float:left;margin: 0 5px; }
+        div#dealerLocationDetailsHeader #dealerLocationToolbar #statusSection{ float:left;margin: 0 5px; color:white; font-weight:bold; }
+
+div#changeStatusSection{ display:block;margin: 0 0;clear:both;width:100%;}
+    div#changeStatusSection input#changeDealerStatusButton,
+    div#changeStatusSection input#changeLocationStatusButton{float:right;}
+
+div#dealerDeactivationDiv ol{list-style:circle; padding:5px;}
+    div#dealerDeactivationDiv li{margin-left:15px;} 
+
+
+
+/******************* Dealer Bulk Update page ************************/
+div#dealerBulkUpdate{}
+    div#dealerBulkUpdate div#bulkUpdateFormFields label{width:150px;float:left;}
+    div#dealerBulkUpdate div#bulkUpdateFormFields fieldset{float:left;clear:both;width:100%;margin:2px 2px;}
+        div#dealerBulkUpdate div#bulkUpdateFormFields fieldset#districtSection{width:350px;clear:left;}
+        div#dealerBulkUpdate div#bulkUpdateFormFields fieldset#representativesSection{width:350px;clear:right;}
+        div#dealerBulkUpdate div#bulkUpdateFormFields fieldset#weightGroupsSection{width:350px;}
+        div#dealerBulkUpdate div#bulkUpdateFormFields fieldset#dealerAwardsSection{width:600px;}
+            div#dealerBulkUpdate div#bulkUpdateFormFields fieldset#dealerAwardsSection table#awardsTable{width:100%;;}
+        /** Bulk update form **/
+        div#dealerBulkUpdate div#bulkUpdateFormFields,
+        div#dealerBulkUpdate div#bulkUpdateNavButtons { float:left;clear:both;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

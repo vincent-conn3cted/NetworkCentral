@@ -1,0 +1,60 @@
+/**
+* Give a nice gradient effect on the panel
+*/
+.yui-panel{
+    background:#E5EDF2 url("../../../images/wib/light-blue-gradient-bg.jpg") repeat-x scroll 0 bottom;
+}
+.yui-panel .hd{
+    background-color:#232B33;
+    font-size: 1.1em;;
+}
+.yui-panel .container-close{
+    background:transparent url("../../../images/wib/icon-cross.gif") no-repeat scroll 0 0;
+}
+
+/**
+* Default button for YUI dialog, 'OK' button
+*/
+.yui-panel .ft .button-group button.default{
+    border:0 none;
+    cursor:pointer;
+    overflow:hidden;
+    background:transparent url("../../../images/wib/s_button_ok.gif") no-repeat scroll 0 0;
+    height:18px;
+    width:69px;
+    padding-left:2px;
+    padding-top:20px;
+}
+
+
+/**
+*  We dont want fieldsets to have the gradient effect, since the panel already has it
+*/
+.yui-panel fieldset{
+    background:transparent;
+}
+.yui-panel hr{
+    background-color:#BACCDB;
+    border:0 none;
+    color:#BACCDB;
+    height:1px;
+    margin-bottom:2px;
+    margin-top:2px;
+}
+
+
+/**
+* Use 'dialogWithDefaultCloseButton' class for those dialogs which we want to display 'Close'
+* button image, instead of the default one (ok button)
+*/
+.yui-panel.dialogWithDefaultCloseButton .ft .button-group button.default{
+    background:transparent url("../../../images/wib/s_button_close.gif") no-repeat scroll 0 0;
+}
+
+.yui-panel input, .yui-panel textarea, .yui-panel select{
+    border: 1px solid #BACCDB;
+    color: #3F5060;
+    font-size:95%;
+}
+
+

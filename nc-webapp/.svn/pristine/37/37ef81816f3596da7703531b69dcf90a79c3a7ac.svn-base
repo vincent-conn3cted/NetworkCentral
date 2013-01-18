@@ -1,0 +1,20 @@
+<project name="Network Central - Webapp">
+
+    <!-- Public Targets -->
+
+    <target name="webapp.install.ui"
+            depends="--webapp.install.ui"
+            description="Copies all UI specific files from src/main/webapp into the deployed location">
+    </target>
+
+    <!-- Private Targets -->
+
+    <target name="--webapp.install.ui">
+        <copy todir="${basedir}/target/au.com.toyota.nc.nc-webapp-3.0.3-SNAPSHOT">
+            <fileset dir="${basedir}/src/main/webapp">
+                <exclude name="**/.svn/**"/>
+            </fileset>
+        </copy>
+    </target>
+
+</project>

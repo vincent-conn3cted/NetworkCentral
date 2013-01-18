@@ -1,0 +1,35 @@
+div#dealerChangeoverPage-listings{
+    margin:10px 0;
+}
+table#changeOverTable-staff,
+table#changeOverTable-locations{
+    margin:10px 0;
+}
+
+div#dealerChangeoverAutomationMessage{
+    border:1px solid #BACCDB;
+    margin:10px 0;
+    height:350px;
+    padding-left:20px;
+    padding-top:10px;
+    padding-right:20px;
+}
+
+div#targetDetail,
+div#sourceDetail{
+    margin:20px 0;
+}
+
+div#targetDetail strong,
+div#sourceDetail strong{
+    text-decoration:underline;
+}
+
+div#targetDetail ol,
+div#sourceDetail ol{
+    list-style-position:inside;
+}
+
+
+div#cancelChangeoverDialog{ width:400px; }
+    div#cancelChangeoverDialog h2{ font-size:1.2em; margin:10px 0; }

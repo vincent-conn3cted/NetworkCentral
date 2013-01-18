@@ -1,0 +1,291 @@
+div#container
+{
+    margin:auto;
+    width:1000px;
+}
+
+.fillingContainer {width:100%;}
+
+/**
+*  Layout for the header
+*/
+div#container_header{clear:both; padding:5px; background-color:silver;}
+    div#container_header #header_logo {
+        float: left; line-height: 1.1em;
+        width: 400px; /** explicitly say the width, IE6 will otherwise occupy the whole line **/
+    }
+        div#container_header #header_logo  .banner_main {
+            float:left; clear: both; font-size: 20px; font-weight: bold;
+        }
+
+        div#container_header #header_logo .banner_footer {
+            float:left; clear: both; font-size: smaller; font-style: italic;
+        }
+
+
+    div#container_header div#header_toolbar {
+        float: right;
+        line-height: 1.1em;
+        font-size:80%;
+        width:250px;  /** explicitly say the width, IE6 will otherwise occupy the whole line **/
+    }
+
+
+
+
+
+
+/**
+*  Layout for the footer
+*/
+div#container_footer {clear: both;padding:5px; background-color:silver;}
+    div#container_footer div#footerMenuLayoutSection { float: left; display:block; }
+
+    /** Menu in the footer */
+    div#container_footer div#footerMenuLayoutSection ul.footerMenu {
+        padding-left: 0;
+        list-style: none;
+        position: relative;
+    }
+    div#container_footer div#footerMenuLayoutSection ul.footerMenu li {
+        display: inline;
+        float: left;
+        text-transform: uppercase;
+        padding-right: 10px;
+        font-size: smaller;
+    }
+
+    div#container_footer div#footer_help {
+        float: right;
+        font-size: smaller;
+    }
+
+/**
+*  Layout for the content
+*/
+div#container_content {
+    clear: both;
+    min-height: 500px;
+    #height : 500 px;
+    padding:5px;
+}
+    div#container_content div#searchFormLayoutSection {clear: both;float: left;}
+    div#container_content div#savedSearchLayoutSection {clear: both; float: left; }
+    div#container_content h3#pageTitle { text-align: left; line-height: 3em; }
+
+
+/**
+*  Layout for home, where the menu is displayed
+*/
+div#mainMenuLayoutSection {
+    margin: 0 auto;
+    width: 800px;
+}
+    div#mainMenuLayoutSection ul.mainMenuList {
+        position: relative;
+        list-style: none;
+    }
+    div#mainMenuLayoutSection ul.mainMenuList li {
+        float: left;
+        display: inline;
+        width: 200px;
+        height: 200px;
+        padding: 5px;
+    }
+
+
+/** Search result options. e.g. save search, export, etc */
+div.searchResultOptions {
+    float: right;
+}
+    div.searchResultOptions ul {
+        list-style: none;
+        position: relative;
+    }
+    div.searchResultOptions li {
+        display: inline;
+        float:left;
+        padding-right: 5px;
+    }
+
+/** Search type options. e.g. new search, saved search */
+ul.searchTypeOptions {
+    float: left;
+    list-style: none;
+    position: relative;
+    clear: both;
+}
+    ul.searchTypeOptions li {
+        display: inline;
+        padding-right: 5px;
+    }
+
+
+
+/** Search dealer staff page */
+div#searchDealerStaffPage {
+}
+    div#searchDealerStaffPage table#dealerStaffSearchTable td {
+        vertical-align: top;
+        padding: 2px;
+    }
+
+
+div#dealerStaffDetailsPage {
+}
+    div#dealerStaffDetailsPage table {
+        border-collapse: separate;
+        border: 1px black solid;
+        margin-bottom: 20px;
+        padding: 5px;
+    }
+    div#dealerStaffDetailsPage caption {
+        border-collapse: separate;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        font-size: 1.1em;
+    }
+
+.hide{
+    visibility:hidden;
+}
+.show{
+    visibility:visible;
+}
+
+.clear{
+    clear:both;
+    font-size:0;
+    height:1px;
+    line-height:0;
+    margin:0 0 -1px;
+    padding:0;
+}
+
+
+/** For fieldset that is used to encapsulate table, we set the position to relative, so that we can set absolute position on the link to add item to the table
+at the top right corner. Also, we need to set the distance of the table from the top.*/
+fieldset.tableEncapsulatingFieldSet { position: relative; }
+    fieldset.tableEncapsulatingFieldSet a.addItemToTableLink { position: absolute; right: 5px; top: 5px; }
+    fieldset.tableEncapsulatingFieldSet table { margin-top: 30px; }
+
+
+/**
+*  Style for popup dialog
+*/
+div.dialog { width:30em;}
+    div.dialog label { display: block; float: left; text-align: right; width: 100px; margin: 5px 0 0; }
+    div.dialog input, div.dialog select, div.dialog textarea { width: auto; float: left; margin: 5px 0 0 10px; }
+    div.dialog br { clear: left; }
+
+/**
+*  Style for logging container & button
+*/
+#loggingButton {
+    background: transparent none repeat scroll 0 0;
+    border: none;
+    width: 0;
+    height: 0;
+}
+
+
+span.radioButtonValue { padding: 3px; }
+
+/* Some calendars are displayed on popups, and we dont want them to be displayed under the popups themselves */
+.calendar {
+    z-index: 999;
+}
+
+button.calendarTriggerBtn {
+    /*float: left;*/
+    background: transparent url( "../images/jscalendar/img.gif" ) no-repeat;
+    width: 22px;
+}
+
+.checkedImage{
+	background: url('../images/green_tick.png') no-repeat center left;
+	height:14px; width:14px; display:inline-block; float:left;
+}
+
+.addImage{
+	background: url('../images/green_tick.png') no-repeat center left;
+	height:14px; width:14px; display:inline-block; float:left;
+}
+
+.resetPasswordImage{
+	background: url('../images/green_tick.png') no-repeat center left;
+	height:14px; width:14px; display:inline-block; float:left;
+}
+
+.discontinuePositionsImage{
+	background: url('../images/green_tick.png') no-repeat center left;
+	height:14px; width:14px; display:inline-block; float:left;
+}
+
+
+.unCheckedImage{
+	background: url('../images/red_cross.gif') no-repeat center left;
+	height:14px; width:14px; display:inline-block; float:left;
+}
+
+.formValue {
+    float: left;
+    width: auto;
+    margin: 5px 0 0 10px;
+}
+
+.formSpan {
+    float: left;
+    width: auto;
+    margin: 5px 0 0 10px;
+}
+.formTh {
+    float: left;
+    width: auto;
+    margin: 0 0 0 10px;
+}
+
+input.error,textarea.error{
+    background:#ff9999;
+}
+
+span.readOnlyFormValue{
+    float:left;
+    margin:5px 5px 0;
+}
+
+.messageBox{
+        /*float: left;*/
+    clear: both;
+    border: 1px black solid;
+    padding: 15px;
+}
+    .messageBox .header {
+        font-weight: bold;
+        padding: 5px 0;
+    }
+    .messageBox.errorMessage {
+        background-color: #ffcc99;
+    }
+        .messageBox.errorMessage li {
+            color:#993300;
+        }
+    .messageBox.infoMessage {
+        background-color: #ccffcc;
+    }
+
+    .messageBox.warningMessage{
+        background-color: #ffffcc;
+    }
+
+
+.left{
+	float:left;
+    display:inline-block;
+}
+
+.right{
+    float:right;
+    display:inline-block;
+}
+

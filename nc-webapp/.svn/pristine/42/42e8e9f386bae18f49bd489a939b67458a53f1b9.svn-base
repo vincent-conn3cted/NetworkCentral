@@ -1,0 +1,59 @@
+#----------
+# Reports menu
+#----------
+menu.networksummary.label=View Network Summary
+menu.dealerinfo.label=Download Hard Copy Lists
+menu.hyperion.label=View Hyperion published reports
+
+#----------
+# Network Summary menu
+#----------
+menu.networksummary.submenu.title=Network Summary
+
+menu.networksummary.submenu.toyota=Toyota
+menu.networksummary.submenu.lexus=Lexus
+
+menu.networksummary.submenu.national=National
+menu.networksummary.submenu.regional=Regional
+menu.networksummary.submenu.state=By State
+
+table.networksummary.results.heading.label=
+table.networksummary.results.heading.principalAndBranches=
+table.networksummary.results.heading.dealerships=Dealerships
+table.networksummary.results.heading.branches=Branches
+table.networksummary.results.heading.satelliteServices=Satellite Service Sites
+table.networksummary.results.heading.otherLocations=Locations - other
+table.networksummary.results.heading.metro=Metro
+table.networksummary.results.heading.rural=Rural
+
+#------
+# Dealer Reports
+#------
+dealer.reports.title=Standard PDF Reports
+dealer.reports.description=Click on a link below to download the report.  Note: Some reports are very large and download may take some time to complete
+
+toyota.all=All Toyota
+lexus.all=All Lexus
+metro.all=All Metro Dealers
+rural.all=All Rural Dealers
+northern.all=All Northern Dealers
+southern.all=All Southern Dealers
+eastern.all=All Eastern Dealers
+western.all=All Western Dealers
+central.all=All Central Dealers
+metro.northern=All Northern Metro Dealers
+metro.southern=All Southern Metro Dealers
+metro.eastern=All Eastern Metro Dealers
+metro.western=All Western Metro Dealers
+metro.central=All Central Metro Dealers
+rural.northern=All Northern Rural Dealers
+rural.southern=All Southern Rural Dealers
+rural.eastern=All Eastern Rural Dealers
+rural.western=All Western Rural Dealers
+rural.central=All Central Rural Dealers
+toyota.eastern=Toyota Eastern Region
+toyota.western=Toyota Western Region
+toyota.central=Toyota Central Region
+toyota.northern=Toyota Northern Region
+toyota.southern=Toyota Southern Region
+prius.all=All Prius Dealers

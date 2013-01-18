@@ -1,0 +1,55 @@
+table.adminTable td{ vertical-align:top; }
+table.adminTable td.formColumn fieldset{
+    background:transparent;
+}
+table.adminTable td.formColumn div.form{
+    padding:10px;
+}
+
+
+ul.column-style-fieldset.twoCols li{
+    width:310px;
+}
+
+div#dropDownFooter {
+	padding-top: 55px;
+	text-align: center;
+}
+
+
+/**
+*  Maintain common values
+*/
+table.adminTable td#commonValueDetailSection h3#commonValueTypeLabel{
+    font-size:1.1em;
+    padding:3px;
+    margin-bottom:5px;
+    padding-left:15px;
+    background:#5D7387;
+}
+
+/**
+* Maintain Position Types
+*/
+table.adminTable td.two_col_left.listColumn {width:15%;}
+table#positionTypesTable td.formColumn fieldset label{width:25%;}
+div.exportSection{
+    border-bottom:1px solid #BACCDB;
+    border-top:1px solid #BACCDB;
+    border-collapse:collapse;
+}
+
+/**
+*  View Open Points
+*/
+table#openPointsPMATable{
+    margin:10px 0;
+    width:400px;
+}
+
+
+/**
+*  Maintain DMS vendors
+*/
+div#addDMSContactDialog{ width:25em;}
+div#addDMSContactDialog fieldset label{ width:45%;}

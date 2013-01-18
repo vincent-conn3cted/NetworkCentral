@@ -1,0 +1,156 @@
+div#newLocationDialog{ width:35em; }
+    div#newLocationDialog fieldset label{width:30%;}
+
+div#dealerDataTableSection table .yui-dt-col-dealerID{display:none;}
+div#dealerDataTableSection table .yui-dt-col-locationID{display:none;}
+div#searchDealerPage div.bulkUpdateResultOption {float:left;}
+
+/**
+*   Dealer/Location header.
+*   This is a container for the dealer/location name, and also some buttons:
+*   1) Change status button
+*   2) Save button
+*   3) Dealer/location status
+**/
+div#dealerLocationDetailsHeader{float:left;clear:both;width:100%;
+  background:#232B33 url(../../../images/wib/fl-divider-dotted-c.gif) repeat-x scroll 0 0;
+}
+    div#dealerLocationDetailsHeader #dealerLocationName{ float: left; font-weight:bold; font-size:1.1em;}
+    div#dealerLocationDetailsHeader #dealerLocationToolbar{ float: right; }
+        div#dealerLocationDetailsHeader #dealerLocationToolbar #saveButtonSection{ float:left;margin: 0 5px; }
+        div#dealerLocationDetailsHeader #dealerLocationToolbar #changeStatusSection{ float:left;margin: 0 5px; }
+        div#dealerLocationDetailsHeader #dealerLocationToolbar #statusSection{ float:left;margin: 0 5px; color:white; font-weight:bold; }
+
+/** Tab content. We want to pad it, so that it doesnt squeeze to the edge. Cant really set this on the container itself, otherwise tabs will be padded too! */
+div.tabContentContainer{
+    padding:5px;
+    background:transparent url("../../../images/wib/light-blue-gradient-bg.jpg") repeat-x scroll 0 bottom;
+}
+div.tabContentContainer a{
+    background:transparent url("../../../images/wib/fl-bullet-red-arrow.gif") no-repeat 0 0.5em;
+    padding-left:11px;
+    padding-top:2px;
+}
+
+div#dealerLocation-nav{
+    background:#2D363F url(../../../images/wib/fl-bg-tfs-nav.gif) repeat-x  0 100%;
+    padding-bottom:4px;
+    padding-left:0;
+    /*padding-top:10px;*/
+    float:left;
+    width:100%;
+    _padding-bottom:0;  /** For IE6 */
+}
+    div#dealerLocation-nav ul{
+        list-style: none;
+        margin:0;
+        margin-top:9px;
+        margin-left:5px;
+        float:left;
+    }
+    div#dealerLocation-nav ul li{
+        float:left;
+        margin:0;
+        height:29px;
+        background:transparent url(../../../images/wib/fl-tabs-tfs-nav-a.gif) no-repeat 0 -34px;
+        margin-right:2px;
+        _margin-right:0; /** For IE6... somehow the background is rendered */
+    }
+    div#dealerLocation-nav ul li.active{
+        background-position:0 0;
+    }
+    div#dealerLocation-nav ul li input.dealertab{
+        float:left;
+        background:transparent url(../../../images/wib/fl-tabs-tfs-nav-b.gif) no-repeat 100% -34px;
+        color:#EFF7FA;
+        display:block;
+        height:29px;
+        padding:0 16px 0 15px;
+        line-height:1em;
+        text-decoration:none;
+        border:0 none;
+        font-size:1em;
+    }
+    div#dealerLocation-nav ul li.active input.dealertab{
+        font-weight:bold;
+         background-position:100% 0;
+    }
+
+
+#changeLocationTypeLink{
+    margin-left:10px;
+}
+
+fieldset#dealer-generalTab-generalInfo{width:400px;}
+    fieldset#dealer-generalTab-generalInfo label{width:150px;}
+
+
+fieldset#tmcaInfo-customerServiceSection label{ width:30%; }
+fieldset#tmcaInfo-dealerGroupMembershipSection label{ width:40%; }
+fieldset#tmcaInfo-businessImprovementSection{width:30%;}
+fieldset#tmcaInfo-financialBenchmarkSection{width:30%;}
+fieldset#tmcaInfo-otherFranchiseSection{width:30%;}
+fieldset#tmcaInfo-serviceTypeSection{width:30%;}
+fieldset#tmcaInfo-sharedFactilitySection{width:80%;}
+
+ul#tmcaInfo-capacityInfoSection label{width:40%;}
+ul#tmcaInfo-csdInfoSection label{width:40%;}
+    fieldset#tmcaInfo-csdInfoSection-tsm1{clear:left; border:none;}
+    fieldset#tmcaInfo-csdInfoSection-tsm2{clear:none; border:none;}
+    fieldset#tmcaInfo-csdInfoSection-misc{clear:right; border:none;}
+
+fieldset#communication-tsm1{clear:left; border:none;}
+fieldset#communication-tsm2{clear:none; border:none;}
+fieldset#communication-tsm1 label {width: 125px;}
+fieldset#communication-tsm2 label {width: 193px;}
+
+div#addBusinessImprovementDialog{width:16em;}
+div#addFinancialBenchmarkDialog{width:16em;}
+div#addOtherFranchiseDialog{width:16em;}
+div#addAwardDialog{width:25em;}
+div#addDealerCommitteeDialog{width:30em;}
+    div#addDealerCommitteeDialog fieldset label{width:30%;}
+div#addSpecialConditionDialog{width:45em;}
+    div#addSpecialConditionDialog fieldset label{width:20%;}
+div#addDocumentDialog{width:25em;}
+    div#addDocumentDialog fieldset label{width:35%;}
+div#addSubscriptionDialog fieldset label{width:40%;}
+div#changeLocationTypeDialog{width:50em;}
+
+
+div#changeStatusDialog
+{
+    width:450px;
+    min-width:450px;
+}
+
+div.changeStatusAffectedEntitiesListings
+{
+    max-height:250px;
+    height:250px;
+    min-height:250px;
+    overflow-y:auto;
+}
+
+div#nonTruncatedSpecialConditionDetails
+{
+    overflow:scroll;
+    width:300px;
+}
+
+form#dealerSearchForm table.form
+{
+    width:435px;
+}
+
+form#dealerSearchForm caption
+{
+    padding-top:5px;
+    margin-top:0;
+}
+
+form#dealerSearchForm table.searchParameters th
+{
+    padding-top:1px;
+    padding-bottom:1px;
+}

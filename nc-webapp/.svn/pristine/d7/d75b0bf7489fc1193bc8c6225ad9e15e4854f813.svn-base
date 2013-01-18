@@ -1,0 +1,1027 @@
+###############################################################################
+## Default Resource Bundle file for the Stripes Framework. Values should be
+## placed in here for the following:
+##   - Form Field Labels, unless you want users to see a non-localized, non-
+##     pretty name from the form field declaration (prettied up a little).
+##   - Error messages for:
+##       - Standard validation error messages
+##       - Converter error messages
+##       - Error messages used in your custom ActionBean classes
+###############################################################################
+
+application.buildNumber=${buildNumber}
+
+# Resource strings used by the <stripes:errors> tag when there are no nested tags
+stripes.errors.header=<div id="errorBox" class="messageBox errorMessage"><div class="header">Please fix the following errors:</div><ol>
+stripes.errors.beforeError=<li>
+stripes.errors.afterError=</li>
+stripes.errors.footer=</ol></div>
+
+# Resource strings used by the <stripes:errors> tag when displaying errors for a
+# specific field (e.g. <stripes:errors field="password"/>). If not supplied the
+# values above will be used instead.
+stripes.fieldErrors.header=
+stripes.fieldErrors.beforeError=<span style="color: #b72222;">
+stripes.fieldErrors.afterError=</span><br />
+stripes.fieldErrors.footer=
+
+# Resource strings used by the stripes:messages tag
+stripes.messages.header=<div id="messageBox" class="messageBox infoMessage"><div class="header">Success</div><ul>
+stripes.messages.beforeMessage=<li>
+stripes.messages.afterMessage=</li>
+stripes.messages.footer=</ul></div>
+
+#Resource strings used by the <nc:warnigns> tag when displaying warnings
+stripes.warnings.header=<div id="warningBox" class="messageBox warningMessage"><div class="header">Warning</div><ul>
+stripes.warnings.beforeWarning=<li>
+stripes.warnings.afterWarning=</li>
+stripes.warnings.footer=</ul></div>
+
+
+
+# Validation error messages produced by Stripes' built-in converter classes. These
+# are default error messages and can be overridden on per-field and per-form levels.
+# Using the 'invalidNumber' error for a field 'age' of a form posting to
+# '/user/Profile.action', the keys looked for (in order) would be:
+#      1: /user/Profile.action.age.invalidNumber
+#      2: /user/Profile.action.age.errorMessage
+#      3: age.errorMessage
+#      4: /user/Profile.action.invalidNumber
+#      5: converter.number.invalidNumber
+converter.number.invalidNumber=The value ({1}) entered in field {0} must be a valid number
+converter.byte.outOfRange=The value ({1}) entered in field {0} was out of the range {2} to {3}
+converter.short.outOfRange=The value ({1}) entered in field {0} was out of the range {2} to {3}
+converter.integer.outOfRange=The value ({1}) entered in field {0} was out of the range {2} to {3}
+converter.float.outOfRange=The value ({1}) entered in field {0} was out of the range {2} to {3}
+converter.enum.notAnEnumeratedValue=The value "{1}" is not a valid value for field {0}
+converter.date.invalidDate=The value ({1}) entered in field {0} must be a valid date
+converter.email.invalidEmail=The value ({1}) entered is not a valid email address
+
+# Validation error messages produced by Stripes' annotation based validations. These
+# are default error messages and can be overridden on per-field and per-form levels.
+# Using the 'valueNotPresent' required field error for a field 'username' of a form
+# posting to '/user/Register.action', the keys looked for (in order) would be:
+#      1: /user/Register.action.username.valueNotPresent
+#      2: /user/Register.action.username.errorMessage
+#      3: username.errorMessage
+#      4: /user/Register.action.valueNotPresent
+#      5: validation.required.valueNotPresent
+validation.required.valueNotPresent={0} is a required field
+validation.minlength.valueTooShort={0} must be at least {2} characters long
+validation.maxlength.valueTooLong={0} must be no more than {2} characters long
+validation.minvalue.valueBelowMinimum=The minimum allowed value for {0} is {2}
+validation.maxvalue.valueAboveMaximum=The maximum allowed value for {0} is {2}
+validation.mask.valueDoesNotMatch=<em>{1}</em> is not a valid {0}
+validation.expression.valueFailedExpression=The value supplied ({1}) for field {0} is invalid
+validation.uploadFile.missing=You must specify the {2} to be uploaded.
+validation.email.invalid={0} is not valid 
+validation.trainingApprovalManager.self.not.allowed=No appointment can have themselves named as their {0}
+validation.invalid.trainingApprovalManager=The appointment cannot be saved while there is an invalid {0} selected
+validation.trainingApprovalManager.not.valid=The appointments cannot be saved while there is an invalid Training Approval Manager selected
+validation.trainingApprovalManager.of.self=No appointment can have themselves named as their Training Approval Manager
+
+
+
+#----------
+# SAP user name can have maximum of 255 chars
+#----------
+appointment.sapinfo.username.length={0} should be less than 256 characters in length
+global.help.label=Help
+
+
+#---------
+# Global menu
+#---------
+globalMenu.home=Home
+globalMenu.search.staff.label=Staff Search
+globalMenu.search.dealershipLocation.label=Dealer Search
+globalMenu.mydetails.label=My Details
+globalMenu.manage.staff.label=Manage Staff
+globalMenu.manage.dealershipLocation.label=Manage Dealer
+globalMenu.manage.operatingEntity.label=Manage Entities
+globalMenu.dealerChangeOver.label=Changeover
+globalMenu.security.label=Security
+globalMenu.administration.label=Administration
+globalMenu.reports.label=Reporting
+
+
+#----------
+# Main menu
+#----------
+menu.search.staff.label=Search for Dealer Staff
+menu.search.staff.title=Search for dealer staff, save searches, load saved searches, create mailing labels, export results
+menu.search.dealershipLocation.label=Search for Dealerships and Locations
+menu.search.dealershipLocation.title=Search for dealerships and locations, save searches, load saved searches, create mailing labels, export results
+menu.mydetails.label=My Details
+menu.mydetails.title=View and edit my details, change my password
+menu.manage.staff.label=Manage staff details
+menu.manage.staff.title=Edit staff details, add new staff member, set passwords, archive staff.
+menu.manage.dealershipLocation.label=Manage dealership and location details
+menu.manage.dealershipLocation.title=Edit Dealership and location details
+menu.manage.operatingEntity.label=Manage operating entities
+menu.manage.operatingEntity.title=Edit operating entity and shareholder details
+menu.dealerChangeover.label=Process Dealer Changeover
+menu.dealerChangeover.title=Copy old dealership details, edit new dealership details, transfer locations and staff \
+  members and set automatic archive of old dealership and activation of new dealership
+menu.bulkImport.label=Bulk Import Users
+menu.bulkImport.title=Upload a file to create and update Staff members, assign passwords and update eDirectory groups
+menu.approvingManager.label=Approving Manager
+menu.approvingManager.title=Approving Manager
+menu.security.label=Security Settings
+menu.security.title=Link to Delegated Administration facility to assign user roles
+menu.administration.label=Administration
+menu.administration.title=View open points, manage groups, manage TMCA field representatives, manage drop down lists, \
+  manage DMS vendors, access external tool to manage TMCA administrators
+menu.reports.label=Reports
+menu.reports.title=Download standard dealer information, view network summary and access external reporting tools \
+  (administrators only)
+
+
+label.networkCentral.main=Network Central
+label.networkCentral.footer=Your central repository for dealer and staff data
+welcome.label=Welcome {0}
+logout.label=Logout
+logout.title=Logout from system
+
+label.addItemToTable=[ + Add ]
+label.editItemInTable=[ Edit ]
+label.removeItemInTable=[ - Remove ]
+label.add=Add
+label.edit=Edit
+label.edit.selected=Edit Selected
+label.delete=Delete
+label.cancel=Cancel
+label.discontinue=Discontinue
+label.remove=Remove
+label.addMore=Add another
+label.search=Search
+label.save=Save
+label.select=Select
+label.selectone=Select One
+label.please.select=Please select ...
+label.metro=Metro
+label.rural=Rural
+label.username=Username
+label.password=Password
+label.change=Change
+label.notavailable=N/A
+label.warning=Warning
+label.title=Title
+label.firstname=First name
+label.surname=Surname
+label.franchise=Franchise Type
+label.tmcapin=TMCA PIN
+label.startDate=Start Date
+label.endDate=End Date
+label.updateAll=Update All
+label.search.save=Save Search
+label.search.exportfull=Export
+label.export.mailmerge=Export for mail merge
+
+
+label.dealer=Dealer
+label.location=Location
+
+label.address=Address
+label.address.street.header=Street Address
+label.address.poBox.header=PO Box Address
+label.address.postal.header=Postal Address
+
+label.abn=ABN
+label.acn=ACN
+label.companyStructure=Company Structure
+label.noitems=No items available
+label.multiOwnerFlag=Multi Owner
+
+code.sap=SAP Code
+code.dealer.sap=SAP Dealer Code
+code.dealer=Dealer Code
+code.partsdealer=Parts Dealer Code
+code.motordealerlicensenumber=Motor Dealer License Number
+code.branch.sap=SAP Branch Code
+code.branch=Dealer Branch Code
+code.partsbranch=Parts Branch Code
+code.multisite=Multisite Code
+code.daso.dealer=DASO Dealer Code
+code.daso.parts=DASO Parts Code
+
+label.address1=Address 1
+label.address2=Address 2
+label.suburb=Suburb
+label.state=State
+label.postCode=Postcode
+
+label.poBoxAddress=PO Box
+
+label.email=Email Address
+label.website=Website
+label.websiteValidated=Website Validated
+label.mobile=Mobile
+label.phone=Telephone
+label.fax=Fax
+label.shortDial=Short Dial
+label.regionalSpeedDial=Regional Speed Dial
+label.salesEmail=Sales Email Address
+label.serviceEmail=Service Email Address
+label.partsEmail=Parts Email Address
+label.csEmail=Customer Service Email Address
+label.serviceUrl=Service Booking URL
+
+label.appointmentDate=Appointment Date
+label.cessationDate=Cessation Date
+
+
+label.cessationReason=Reason for Cessation
+label.franchiseCodeEvent=Franchise Code Event
+label.replacementPrincipalLocation=New Principal Location
+label.note=Notes
+
+
+
+
+message.save.success=Save successful
+message.activation.scheduled=Activation has been scheduled at [{0}]
+message.deactivation.scheduled=Deactivation has been scheduled at [{0}]
+message.activation.executed=Activation has been executed
+message.deactivation.executed=Deactivation has been executed
+
+error.invalid.daterange=Invalid date range has been specified. Start date has to be before end date.
+error.position.definition.required=At least one position definition is required.
+error.model.notfound=Could not find the required {2} in the database.
+error.common.validation.phoneno=Phone/Fax number must have 10 numeric
+error.common.validation.abn=ABN number must have 11 numeric
+error.common.validation.acn=ACN number must have 9 numeric
+error.oe.searchvalidator=At least one of the fields must have an entry
+error.applicationError=<h2>{0} - Currently Unavailable</h2><p>Network Central is currently unavailable ({0}). We apologise for any inconvenience this may have caused. </p><div class\="systemErrorBox"><div class\="systemErrorHeader">Application Error message\:</div><br/>                                                      <div class\="systemErrorMessage">           {1}                         </div> </div>                                                          <p>Our customer support team are currently making every effort to ensure  that the service is available to you again as soon as possible.</p><p>In the meantime if you have any questions or concerns please feel free to contact one of our customer support professionals.</p><ul><li>By phone\: {2}</li><li>By email\: <a href\="mailto\:{3}">{3}</a></li></ul>
+error.staff.searchvalidator.generic=Invalid search criteria combination, please enter valid combination
+error.staff.searchvalidator.name=Invalid search criteria. Please enter both First Name and Surname
+message.login.failed=The username and/or password you entered is incorrect, please re-enter the details.<br/><br/>For dealership users, if you have forgotten your details, please contact tSupport via email <a href\='mailto\:tsupport@toyota.com.au'>tsupport@toyota.com.au</a> or phone on 1800 251 175.<br/><br/>For internal TMCA users, the username and password is the same as your network password. If you have forgotten these details, please contact IBM on extension 8000.
+message.404=You have tried to access paage that doesnt exist. <br/>Please contact tSupport via email <a href\='mailto\:tsupport@toyota.com.au'>tsupport@toyota.com.au</a> or phone on 1800 251 175 for assistance
+message.access.denied=You do not have authority to access this page. <br/>Please contact Support via email <a href\='mailto\:tsupport@toyota.com.au'>tsupport@toyota.com.au</a> or phone on 1800 251 175 for assistance
+
+
+support.email=tsupport@toyota.com.au
+support.phone=1800 251 175
+
+#-----
+# Manage dealership location menu
+#-----
+menu.dealershiplocation.search.dealer=Search for Dealership or Location to Edit
+menu.dealershiplocation.add.dealer=Create New Dealership
+menu.dealershiplocation.add.location=Add New Location
+
+
+#-----
+# Search Dealership Staff
+#-----
+/staff/DealerStaffSearch.action.searchReq.myDealer=My Dealer Staff
+/staff/DealerStaffSearch.action.searchReq.dealerStaffNo=Dealer Staff No
+/staff/DealerStaffSearch.action.searchReq.firstname=First Name
+/staff/DealerStaffSearch.action.searchReq.surname=Surname
+/staff/DealerStaffSearch.action.searchReq.dealerName=Dealer Name
+/staff/DealerStaffSearch.action.searchReq.locationSuburb=Suburb
+/staff/DealerStaffSearch.action.searchReq.locationState=State
+/staff/DealerStaffSearch.action.searchReq.dealerRegion=Region
+/staff/DealerStaffSearch.action.searchReq.department=Department
+/staff/DealerStaffSearch.action.searchReq.position=Position
+/staff/DealerStaffSearch.action.searchReq.franchise=Franchise Type
+/staff/DealerStaffSearch.action.savedSearchName=Search Label
+error.dealerStaff.discontinue.missingStaffOrDealerID=Staff ID or Dealer ID is missing from the request, discontinue positions didn't performed
+
+dealerstaffsearch.action.add=Add new staff member
+dealerstaffsearch.create.success=The Dealer Staff member has been saved successfully!
+dealerstaffsearch.updateWithLdap.success=The Dealer Staff member has been saved successfully! The LDAP User ID(s) has changed. Please note the new LDAP ID(s) are:<br/><br/> {0} <br/><br/>All user details have been preserved including password and security group(s).
+dealerstaffsearch.update.success=The Dealer Staff member has been saved successfully!
+
+dealerstaffsearch.surname=Surname
+dealerstaffsearch.firstname=First Name
+dealerstaffsearch.email=Email
+dealerstaffsearch.departmentNumber=Department No.
+dealerstaffsearch.position=Position
+dealerstaffsearch.division=Division
+dealerstaffsearch.telephone=Telephone
+
+dealerstaffsearch.action.addPosition=Add Position
+dealerstaffsearch.action.addDpGmrPosition=Add DP/GMR Position
+
+/staff/dealerstaff/DealerStaffPosition.action.appointment.dealer.dealerId=Dealership
+appointment.location.locationId=Location
+/staff/dealerstaff/DealerStaffPosition.action.appointment.position.positionId=Position
+/staff/dealerstaff/DealerStaffPosition.action.appointment.positionDefinition=Position Definition
+/staff/dealerstaff/DealerStaffPosition.action.appointmentDepartments=Department(s)
+/staff/dealerstaff/DealerStaffPosition.action.appointment.contact.phone=Direct Phone
+/staff/dealerstaff/DealerStaffPosition.action.appointment.partTimeFlag=Part time
+/staff/dealerstaff/DealerStaffPosition.action.appointment.appointmentDate.startDate=Start Date in role
+/staff/dealerstaff/DealerStaffPosition.action.appointment.contact.email=Email Address
+/staff/dealerstaff/DealerStaffPosition.action.appointment.contact.fax=Fax
+/staff/dealerstaff/DealerStaffPosition.action.appointment.contact.mobile=Mobile
+/staff/dealerstaff/DealerStaffPosition.action.appointment.activeForToyotaSystems=Active for Toyota Systems
+/staff/dealerstaff/DealerStaffPosition.action.appointment.primaryPosition=Primary position?
+/staff/dealerstaff/DealerStaffPosition.action.appointmentTrainingApprovalManager=Training Approval Manager
+/staff/dealerstaff/DealerStaffPosition.action.appointment.dripInfo.emailOptIn=Email Opt in
+/staff/dealerstaff/DealerStaffPosition.action.appointment.dripInfo.smsOptIn=SMS Opt in
+/staff/dealerstaff/DealerStaffPosition.action.appointment.dripInfo.smsNumber=SMS Number
+/staff/dealerstaff/DealerStaffPosition.action.appointment.twrsChampionFlag=TWRS champion
+/staff/dealerstaff/DealerStaffPosition.action.appointment.privacyOfficerFlag=Privacy Officer
+/staff/dealerstaff/DealerStaffPosition.action.appointment.trainingOfficerFlag=Training Officer
+/staff/dealerstaff/DealerStaffPosition.action.appointment.authorisedTrainingApproverFlag=Authorised Training Approver
+/staff/dealerstaff/DealerStaffPosition.action.appointment.dealerPortalUser=Dealer Regional Information Portal user
+/staff/dealerstaff/DealerStaffPosition.action.appointment.sapInfo.username=SAP Username
+sapUsernameActive=SAP Username Validated
+/staff/dealerstaff/DealerStaffPosition.action.appointment.sapInfo.validated=SAP Username Validated
+/staff/dealerstaff/DealerStaffPosition.action.appointment.sapInfo.sapUsernameActive=SAP Username Validated
+/staff/dealerstaff/DealerStaffPosition.action.appointment.salesIndicator=Add to SAP?
+appointment.ldap.userid=LDAP User ID
+appointment.otherPositionDetails=Other position details
+appointment.trainingApprovalManager=Training Approval Manager
+
+
+/staff/dealerstaff/DealerStaffPositionDOBValidation.action.appointment.person.title=Title
+/staff/dealerstaff/DealerStaffPositionDOBValidation.action.appointment.person.firstname=First Name
+/staff/dealerstaff/DealerStaffPositionDOBValidation.action.appointment.person.surname=Surname
+/staff/dealerstaff/DealerStaffPositionDOBValidation.action.appointment.person.dob=Date Of Birth
+
+dealerStaff.notes=Notes
+dealerStaff.dealerStaffNo=Dealer Staff No.
+dealerStaff.title=Title
+dealerStaff.firstname=First Name
+dealerStaff.surname=Surname
+dealerStaff.dob=Date Of Birth
+dealerStaff.spouseTitle=Spouse Title
+dealerStaff.spouseFirstname=Spouse First name
+dealerStaff.spouseSurname=Spouse Surname
+dealerStaff.trainingIdNumber=Training ID Number
+dealerStaff.salesSocietyNumber=Sales Society Number
+dealerStaff.technicianSocietyNumber=Technician Society Number
+addLanguageId=Language
+dealerstaffsearch.language.addLink=+ Add
+dealerstaffsearch.language.addLink.label=Language(s) spoken
+dealerstaffsearch.sap.username.status.verified=Validated
+dealerstaffsearch.sap.username.status.notverified=Not Validated
+dealerstaffsearch.appointment.copy=Add position - copy contact details
+dealerstaffsearch.appointment.discontinue=Discontinue position
+dealerstaffsearch.appointment.edit=Edit position details
+
+message.dealerstaffsearch.appointment.discontinue.success=The appointment has been successfully discontinued!
+
+staff.add.agreement=Add Staff
+staff.search.savesearch=Save Search
+staff.search.export.full=Export
+staff.search.export.mailmerge=Export for mail merge
+staff.discontinue.warning.message=Warning: The staff member that you have discontinued has one or more dealership staff members that name them as their Training Approval Manager.<br/><br/>Please go to the Training Approval Managers screen to see which staff are impacted, and to correct their Training Approval Manager.
+
+
+#------
+# Positions
+#------
+positions.section.appointment=Appointment Information
+positions.section.contactdetails=Contact Details
+positions.section.systeminformation=System Information
+positions.section.primaryPosition.tip=If you leave this box unchecked and there is no other primary position assigned to this staff member, the system will automatically set this as checked after saving
+
+errors.positions.startDate.afterToday=The Start Date in role must be on or before today
+
+#------
+# Search Dealership & Locations
+#------
+
+/dealerLocations/ManageDealerLocation.action.dealer.awards.yearWon.valueDoesNotMatch=The value ({1}) is not a valid year
+au.com.toyota.nc.webapp.stripes.dealerLocations.ManageDealerLocationActionBean.dealerIdsForBulkUpdate.valueNotPresent=Please select one or more dealers for bulk update.
+dealerlocationsearch.header=Search for Dealer and Locations
+dealerlocationsearchresult.header=Search for Dealership and Locations - Result
+
+#------
+# Manage my dealership & locations
+#------
+mydealerlocation.header=Manage my dealership and locations
+
+
+#-------
+# Tabs for dealer/location maintenance page
+#-------
+dealerlocation.tab.generalinfo=General
+dealerlocation.tab.tmcainfo=TMCA
+dealerlocation.tab.identification=Identification Number
+dealerlocation.tab.legal=Legal and Agreement
+dealerlocation.tab.awards=Awards
+dealerlocation.tab.location=Location
+dealerlocation.tab.staff=Staff
+dealerlocation.tab.files=Files
+dealerlocation.tab.systemInfo=Systems
+dealerlocation.tab.marketing=Marketing
+
+dealerlocation.warning.changeStatus=Changing the status of this Dealer will result in eDirectory and SAP operations. Are you sure that you want to continue?
+
+#-----
+# Dealer Bulk Update
+#-----
+dealerbulkupdate.header=Dealer Bulk Update
+dealerbulkupdate.selectedDealer.header=Update fields for
+
+#-----
+# Manage Dealership & Locations
+#-----
+dealer.dealerId=Dealer ID
+dealer.generalInfo.dealerName=Dealer Name
+dealer.generalInfo.dealerCode=Dealer Code
+dealer.generalInfo.status=Dealer Status
+dealer.generalInfo.metroFlag=Metro/Rural
+dealer.generalInfo.region=Region
+dealer.generalInfo.regionClassification=Region Classification
+dealer.generalInfo.salesDistrict=Sales District
+dealer.generalInfo.operationDistrict=Operation District
+dealer.generalInfo.serviceDistrict=Service District
+dealer.generalInfo.financialReportingFlag=Fin. Reporting Dlr
+
+dealer.generalInfo.mainFranchise=Primary Franchise
+
+dealer.businessPartnersInfo.tmcaFieldRep=TMCA Field Representatives
+dealer.businessPartnersInfo.dsmStaff=DSM
+dealer.businessPartnersInfo.dsomStaff=DSOM
+dealer.businessPartnersInfo.dcsaimStaff=DCSaIM
+dealer.businessPartnersInfo.doprmStaff=DOprM
+dealer.businessPartnersInfo.technicalSpecialistStaff=Technical Specialist
+dealer.businessPartnersInfo.raskmStaff=RASKM
+
+dealer.businessImprovements=Business Improvement
+dealer.financialBenchmark=Financial Benchmark
+dealer.marketingSubscription=Marketing Subscription
+dealer.committees=Dealer Select Committee
+dealer.otherFranchise=Other Franchise
+dealer.specialConditions=Special Conditions
+dealer.specialConditions.number=Special condition number
+dealer.specialConditions.type=Special condition type
+dealer.specialConditions.details=Special condition details
+dealer.specialConditions.comments=Special condition comments
+dealer.awards=Awards
+dealer.otherProducts=Other Products
+                                                              
+dealer.ownershipInfo.dpPercentageEquity=DP Own %
+dealer.ownershipInfo.tmcaOwnershipFlag=TMCA Owned Site
+
+dealer.weightsInfo.salesWeight=Sales
+dealer.weightsInfo.usedVehicleWeight=Used Vehicle
+dealer.weightsInfo.serviceWeight=Service
+dealer.weightsInfo.partsWeight=Parts
+dealer.weightsInfo.accessoriesWeight=Accessories
+dealer.weightsInfo.csiWeight=CS
+dealer.weightsInfo.lexusWeight=Lexus
+
+dealer.customerServiceInfo.dealerWarrantyCode=Dealer Warranty Code
+dealer.customerServiceInfo.repairingDealerFlag=Spec. Repairing Dlr
+dealer.customerServiceInfo.extracareWarrantyFlag=Extracare Warranty
+dealer.customerServiceInfo.serviceOpStandardComplianceFlag=Sv Op Std Compliant
+
+dealer.dealerGroupMembershipInfo.kaizenCommitteeFlag=Dealer Kaizen Committee
+dealer.dealerGroupMembershipInfo.salesReportingFlag=Dealer Sales Reporting
+dealer.dealerGroupMembershipInfo.stockLocatorFlag=Stock Locator
+dealer.dealerGroupMembershipInfo.certifiedUsedVehicleFlag=Certified Used Vehicle
+dealer.dealerGroupMembershipInfo.twrsParticipantFlag=TWRS Participant
+dealer.dealerGroupMembershipInfo.tfsAuthToViewFlag=TFS auth to view
+
+
+dealer.systemInfo.coinContact=DAN Contact
+dealer.systemInfo.itConnectionType=IT Connection Type
+dealer.systemInfo.coinRouterDetails=DAN Router Details
+dealer.systemInfo.contactType=Contact Type
+dealer.systemInfo.coinBandwidth=DAN Bandwidth
+dealer.systemInfo.connectionSpeed=Connection Speed
+dealer.systemInfo.loginPrefix=Login Prefix
+dealer.systemInfo.itSystemDetails=IT System Details
+dealer.systemInfo.foundationFlag=Foundation
+dealer.systemInfo.papisFlag=PAPIS
+dealer.systemInfo.showroomFlag=Showroom
+dealer.systemInfo.tjunctionRenewalDate=Contract Renewal Date
+
+dealer.agreement.renewalDate=Renewal Date
+dealer.agreement.renewalTerm=Renewal Term (years)
+dealer.agreement.timeremaining=Time remaining
+dealer.agreement.timeremaining.value={0} years {1} months {2} days
+dealer.agreement.priusStartDate=Prius Start Date
+dealer.agreement.yearsAsDealer=Years as Dealer
+dealer.agreement.timeInDealership=Time in dealership
+
+
+
+dealer.financialInfo.financeCompany=Finance Company
+dealer.financialInfo.tfsAccountManager=TFS Account Manager
+dealer.financialInfo.changeDate=Change Date
+dealer.financialInfo.rctiAgreement=RCTI Agreement
+dealer.financialInfo.autoReleaseNumber=Auto Release Number
+dealer.financialInfo.manualReleaseFlag=Manual Release
+
+            #====================================================================
+            # All section headers for dealer/location pages
+            #====================================================================
+            #-------
+            # Dealer - General Tab
+            #-------
+            dealer.generaltab.section.corporate.header=Corporate
+            dealer.generaltab.section.communication.header=Communication
+
+
+            #-----------
+            # Dealer - TMCA TAB
+            #-----------
+            dealer.tmcatab.section.general.header=General
+            dealer.tmcatab.section.districts.header=Districts
+            dealer.tmcatab.section.weights.header=Weight Groups
+            dealer.tmcatab.section.custinfo.header=Customer Service Info
+            dealer.tmcatab.section.dealergroups.header=Dealer Group Membership
+
+            #-----------
+            # Location -TMCA TAB
+            #-----------
+            location.tmcatab.section.capacity.showroom.header=Capacity-Showroom
+            location.tmcatab.section.capacity.vehicles.new.header=Capacity-New Vehicles
+            location.tmcatab.section.capacity.vehicles.used.header=Capacity-Used Vehicles
+            location.tmcatab.section.csd.header=CSD
+            location.tmcatab.section.delivery.header=Delivery Instructions
+
+             #-----------
+            # Dealer - Awards TAB
+            #-----------
+            dealer.awardtab.section.award.header=Dealer Awards
+
+
+
+             #-----------
+            # Dealer - Legal TAB
+            #-----------
+            dealer.legaltab.section.agreement.header=Dealer Agreement
+            dealer.legaltab.section.financial.header=Financial Information
+            dealer.legaltab.section.ownership.header=Ownership Details
+
+            #----------
+            # SYSTEM INFORMATION TAB
+            #----------
+            dealer.sysinfotab.section.general.header=Systems, Pilot and Participation
+            dealer.sysinfotab.section.rddagreement.header=RDD Agreement
+            dealer.sysinfotab.section.dms.header=DMS
+
+
+
+
+
+
+otherFranchise.franchiseName=Franchise
+otherFranchise.sharedFacility=Shared Facility
+otherFranchise.sharedShowroom=Shared - Showroom
+otherFranchise.sharedWorkshop=Shared - Workshop
+otherFranchise.sharedOther=Shared - Other
+
+committee.committeeName=Committee Name
+committee.currentFlag=Current
+committee.previousFlag=Previous
+committee.membersName=Member's name
+committee.role=Role
+committee.validFrom=Valid From
+committee.validTo=Valid To
+
+specialcondition.title=Dealer Special Condition
+specialcondition.number=SC Number
+specialcondition.type=SC Type
+specialcondition.details=Details
+specialcondition.date.compliance=Compliance Date
+specialcondition.date.completion=Completion Date
+specialcondition.regionalmanager=Regional FD Manager responsible
+specialcondition.status=Status
+specialcondition.completeflag=Complete
+specialcondition.comments=Comments
+
+subscription.name=Name
+subscription.tmcadivision=TMCA Ownership Division
+subscription.since=Subscription Since
+subscription.until=Subscription Until
+
+award.year=Year
+award.type=Award Won
+award.level=Level Attained
+
+document.documentType=Document Type
+document.documentName=Document Name
+document.url=URL
+document.publicFlag=Public Flag
+document.file=File
+document.creationDate=Creation Date
+
+serviceType.title=Service Type
+
+
+#-------
+# Manage Location
+#-------
+location.type=Location Type
+location.dealer.generalInfo.dealerName=Dealership
+location.locationName=Location Name
+location.reportingName=Reporting Name
+location.locationType=Location Type
+location.status=Location Status
+location.locationId=Location ID
+location.newCorporateIdentityFlag=New Corp Identity
+location.dealerPrefix=Dealer Prefix
+
+# // Add by Rick for Dealer Prefix and Financial Reporting enhancement;
+location.financialsReportingFlag=Financials Reporting
+location.type.change.header=Change Location Type
+location.type.change.replacementLocation=Replacement Location
+location.type.change.newSapCode=SAP Code <span class="tipMessage">(will be ignored unless the new Location Type is a Branch, Satellite or Ship To Location)</span>
+location.type.change.success=The Locations type has been changed to a {0} type
+
+        #------------------
+        # Capacity Info
+        #------------------
+        location.showroomCapacityInfo.area=Showroom Area m<sup>2</sup>
+        location.showroomCapacityInfo.displayVehicles=Display Vehicles
+
+        location.newVehicleCapacityInfo.customerParking=Customer Parking
+        location.newVehicleCapacityInfo.demonstratorParking=Demonstrator Parking
+        location.newVehicleCapacityInfo.undercoverBay=Undercover Bays
+        location.newVehicleCapacityInfo.externalDisplaySpaces=External Display Spaces
+        location.newVehicleCapacityInfo.storageArea=Storage Area m<sup>2</sup>
+
+        location.usedVehicleCapacityInfo.storageArea=Storage Area m<sup>2</sup>
+        location.usedVehicleCapacityInfo.externalDisplaySpaces=External Display Spaces
+        location.usedVehicleCapacityInfo.customerParking=Customer Parking
+
+
+        #------------------
+        # CSD Info
+        #------------------
+        location.csdInfo.tsmLevel1=TSM Level 1
+        location.csdInfo.level1Status=L1 Status
+        location.csdInfo.level1CertificationDate=L1 Certification Date
+        location.csdInfo.level1RecertDate=L1 Recert Date
+
+        location.csdInfo.tsmLevel2=TSM Level 2
+        location.csdInfo.level2Status=L2 Status
+        location.csdInfo.level2CertificationDate=L2 Certification Date
+        location.csdInfo.level2RecertDate=L2 Recert Date
+
+        location.csdInfo.expressMaintenanceFlag=Express Maintenance
+        location.csdInfo.tyreBatteryProgramFlag=Tyre &amp; Batt Program
+        location.csdInfo.bodyPaintRepairerFlag=Body &amp; Paint Repairer
+        location.csdInfo.bodyPaintTSMFlag=Body &amp; Paint TSM
+
+        #---------------
+        # Delivery Information
+        #---------------
+        location.partsDelivery.address=Parts Delivery Address
+        location.partsDelivery.fromTime=Parts Delivery From (time)
+        location.partsDelivery.fromTime.valueDoesNotMatch={0} must be formatted HH:mm (24 hours). {1} is not a valid hour.
+        location.partsDelivery.toTime=Parts Delivery To (time)
+        location.partsDelivery.toTime.valueDoesNotMatch={0} must be formatted HH:mm (24 hours). {1} is not a valid hour.
+        location.partsDelivery.instructions=Parts Delivery Instructions
+
+        location.vehiclesDelivery.address=Vehicle Delivery Address
+        location.vehiclesDelivery.fromTime=Vehicle Delivery From (time)
+        location.vehiclesDelivery.fromTime.valueDoesNotMatch={0} must be formatted HH:mm (24 hours). {1} is not a valid hour.
+        location.vehiclesDelivery.toTime=Vehicle Delivery To (time)
+        location.vehiclesDelivery.toTime.valueDoesNotMatch={0} must be formatted HH:mm (24 hours). {1} is not a valid hour.
+        location.vehiclesDelivery.instructions=Vehicle Delivery Instructions
+        location.destinationCode=Destination Code
+        location.makerCode=Maker Code
+
+
+#----
+# SAP code verification
+#----
+sapCodeVerification.header.verified=SAP Code Verification - Verified
+sapCodeVerification.header.fail=SAP Code Verification - Failed
+sapCodeVerification.notFound=Not found.
+
+#-----
+# Manage drop down list
+#-----
+au.com.toyota.nc.webapp.stripes.admin.ManageCommonValuesActionBean.saveEditRequest.code=Code
+au.com.toyota.nc.webapp.stripes.admin.ManageCommonValuesActionBean.saveEditRequest.description=Description
+
+au.com.toyota.nc.webapp.stripes.admin.ManageCommonValuesActionBean.selectedCommonValueId.valueNotPresent=Please select a common value for editing
+
+
+#------
+# Manage PMA
+#------
+pma.code=PMA Code
+pma.name=PMA Name
+
+pma.code.valueNotPresent=PMA Code is a required field
+pma.name.valueNotPresent=PMA Name is a required field
+
+error.pma.id.required=Please select a PMA for editing
+
+subpma.code=Sub PMA Code
+subpma.name=Sub PMA Name
+
+#-----
+# Manage Position Types
+#-----
+position.description=Position Type
+position.abbreviation=Abbreviation
+position.sapSalesCategory=SAP Category
+position.sapSalesPosition=SAP Sales Position
+position.exportHardCopy=Required for export - Standard hard copy
+position.exportMailMerge=Required for export - Dealer & Location Mail Merge
+position.exportExcel=Required for export - Excel
+position.sortOrderHardCopy=Sort Order
+position.sortOrderMailMerge=Sort Order
+position.sortOrderExcel=Sort Order
+
+position.dpGmr=DP/GMR
+position.positionDefinitionsLabel=Position Definition
+
+position.message.discontinued.success=The position type has been successfully discontinued
+
+/admin/ManagePositionTypes.action.position.description.valueNotPresent=Position Type is a required field
+/admin/ManagePositionTypes.action.position.sapSalesCategory.valueNotPresent=SAP Category is a required field
+/admin/ManagePositionTypes.action.position.sapSalesPosition.valueNotPresent=SAP Sales Position is a required field
+
+/admin/ManagePositionTypes.action.edit.positionId.required=Please select a position type for editing
+/admin/ManagePositionTypes.action.missingSAPAttributes=Please supply either both SAP Category/Position, or none.
+
+
+#----
+# Manage TMCA Field Representatives
+#----
+/admin/ManageTMCAFieldRepresentatives.action.staff.firstname.valueNotPresent=First name is a required field
+/admin/ManageTMCAFieldRepresentatives.action.staff.surname.valueNotPresent=Last name is a required field
+/admin/ManageTMCAFieldRepresentatives.action.staff.tmcaPIN.valueNotPresent=TMCA PIN is a required field
+
+/admin/ManageTMCAFieldRepresentatives.action.edit.staffId.required=Please select a TMCA Field Representative for editing
+
+#------
+# Manage Group
+#------
+group=Group
+group.name=Group Name
+group.frameworkAgreementPresentFlag=Framework Agreement in Place
+group.frameworkAgreementStart=Framework Agreement Start Date
+group.frameworkAgreementTerm=Framework Agreement Valid For
+
+/admin/ManageGroup.action.edit.groupId.required=Please select a Group for editing
+
+operatingEntity=Operating Entity
+operatingEntity.name=Operating Entity Name
+operatingEntity.abn=OE ABN
+operatingEntity.acn=OE ACN
+
+
+#------
+# Manage DMS Vendor
+#------
+vendor.name=DMS Vendor/Supplier Name
+vendor.contact=DMS Contact
+vendor.contactPerson=DMS Vendor Contact
+vendor.contact.streetAddress.address1=DMS Vendor Address 1
+vendor.contact.streetAddress.address2=DMS Vendor Address 2
+vendor.contact.phone=DMS Vendor Phone Number
+vendor.product=DMS Product
+vendor.product.name=DMS Product
+error.dms.id.required=Please select a DMS Vendor for editing
+
+#-------
+# Search Ownership Entity Search
+#-------
+/ownershipEntity/OwnershipEntitySearch.action.searchReq.name=Name
+/ownershipEntity/OwnershipEntitySearch.action.searchReq.type=Type
+/ownershipEntity/OwnershipEntitySearch.action.searchReq.status=Status
+
+
+/ownershipEntity/ManageShareholding.action.company.search=Search
+/ownershipEntity/ManageShareholding.action.abstractShareholding.shareType.shareTypeId=Share Type
+/ownershipEntity/ManageShareholding.action.abstractShareholding.staffId=Staff Member
+/ownershipEntity/ManageShareholding.action.abstractShareholding.numShares=Num Shares
+/ownershipEntity/ManageShareholding.action.abstractShareholding.dealerPrinciple=Dealer Principal
+
+
+
+oe.menu.header=Manage Ownership Entities and Shareholding Details
+oe.menu.header.shareType=Maintain Share Type
+oe.menu.header.shareholding=Maintain Shareholidng
+oe.menu.header.shareholding.owned=Company that is Owned
+oe.menu.header.shareholding.details=Shareholding details
+oe.menu.header.shareholding.owner=Entity that is the owner
+
+#----
+# Ownership menu
+#----
+menu.search.header=Search for Entity
+menu.search.header.edit=Edit
+menu.search.header.select=Select
+
+menu.add.company=Add Company
+menu.add.individual=Add Individual
+menu.add.shareholdings=Add Shareholdings
+menu.add.sharetype=Add/Maintain Share Types
+
+company.name=Name
+shareType.shareName=Share Type Name
+abstractShareholding.owner=Share Owner
+abstractShareholding.shareType=Share Type
+
+
+#---
+# Maintain Corporate Entity
+#---
+maintain.entity.corporate=Add/Maintain Corporate Entity
+maintain.entity.corporate.section.corporate=Corporate
+maintain.entity.corporate.section.communication=Communication
+maintain.entity.corporate.section.note=Note
+maintain.entity.corporate.section.name=Name
+
+
+#---
+# View Corporate Entity
+#---
+view.entity.corporate=View Corporate Entity
+view.entity.corporate.section.corporate=Corporate
+view.entity.corporate.section.address.street=Street Address
+view.entity.corporate.section.address.postal=Postal Address
+view.entity.corporate.section.communication=Communication
+view.entity.corporate.section.note=Note
+view.entity.corporate.shareholders=Shareholders of
+view.entity.corporate.shareholdings=Shareholdings of
+view.entity.corporate.section.name=Name
+
+#---
+# View Corporate Entity
+#---
+view.entity.individual=View Individual Entity
+view.entity.individual.section.individual=Individual
+view.entity.individual.section.address.street=Address
+view.entity.individual.section.address.postal=Postal Address
+view.entity.individual.section.communication=Communication
+view.entity.individual.section.staffref=Staff Reference
+view.entity.individual.section.note=Note
+view.entity.individual.shareholdings=Shareholdings of
+view.entity.individual.section.name=Name
+
+#---
+# Maintain Individual Entity
+#---
+maintain.entity.individual=Add/Maintain Individual Entity
+maintain.entity.individual.section.communication=Communication
+maintain.entity.individual.section.dealerStaff=Dealer Staff 
+maintain.entity.individual.section.noAndName=Staff No/Name
+maintain.entity.individual.section.staffNo=Staff No
+maintain.entity.individual.section.staffName=Staff Name
+maintain.entity.individual.section.addDealerStaff=Add Dealer Staff
+maintain.entity.individual.section.changeDealerStaff=Change Dealer Staff
+maintain.entity.individual.section.note=Note
+
+#---
+# Maintain Share type
+#---
+maintain.sharetype.search=Search/Edit Share Types
+maintain.sharetype.search.company=Compnay
+maintain.sharetype.add=Add Share Types
+
+
+#---
+# Maintain Shareholding
+#---
+maintain.shareholding.search.company=Search
+maintain.shareholding.search.owner=Search
+maintain.shareholding.add.company=Add Company
+maintain.shareholding.add.companyowner=Add Company
+maintain.shareholding.add.individualowner=Add Individual
+maintain.shareholding.add.sharetype=Add Share Type
+
+
+#--------
+#
+#--------
+no.entities=No records found=======
+
+
+#--------
+# Manage Corporate Entity
+#--------
+/ownershipEntity/ManageCorporateEntity.action.company.name=Name
+/ownershipEntity/ManageCorporateEntity.action.company.secretary=Comp. Secretary
+/ownershipEntity/ManageCorporateEntity.action.company.director=Directors
+
+company.dealers=In association with
+
+
+#--------
+# View Corporate Entity
+#--------
+/ownershipEntity/ViewCorporateEntity.action.company.name=Name
+/ownershipEntity/ViewCorporateEntity.action.company.abn=ABN
+/ownershipEntity/ViewCorporateEntity.action.company.acn=ACN
+/ownershipEntity/ViewCorporateEntity.action.company.companyStructure=Company Structure
+
+/ownershipEntity/ViewCorporateEntity.action.company.contact.streetAddress.address1=Street 1
+/ownershipEntity/ViewCorporateEntity.action.company.contact.streetAddress.suburb=City
+/ownershipEntity/ViewCorporateEntity.action.company.contact.streetAddress.postCode=Postcode
+/ownershipEntity/ViewCorporateEntity.action.company.contact.streetAddress.address2=Street 2
+/ownershipEntity/ViewCorporateEntity.action.company.contact.streetAddress.state=State
+
+/ownershipEntity/ViewCorporateEntity.action.company.contact.postalAddress.address1=postal 1
+/ownershipEntity/ViewCorporateEntity.action.company.contact.postalAddress.suburb=City
+/ownershipEntity/ViewCorporateEntity.action.company.contact.postalAddress.postCode=Postcode
+/ownershipEntity/ViewCorporateEntity.action.company.contact.postalAddress.address2=postal 2
+/ownershipEntity/ViewCorporateEntity.action.company.contact.postalAddress.state=State
+
+/ownershipEntity/ViewCorporateEntity.action.company.contact.email=Email Address
+/ownershipEntity/ViewCorporateEntity.action.company.contact.website=Website
+/ownershipEntity/ViewCorporateEntity.action.company.contact.phone=Telephone
+/ownershipEntity/ViewCorporateEntity.action.company.contact.fax=Fax
+/ownershipEntity/ViewCorporateEntity.action.company.secretary=Comp. Secretary
+/ownershipEntity/ViewCorporateEntity.action.company.director=Directors
+
+#--------
+# View Individual Entity
+#--------
+individual.contact.email=Email Address
+individual.contact.phone=Telephone
+individual.contact.fax=Fax
+individual.dealerStaff=Staff Member ID
+
+#---------
+# Manage Individual Entity
+#---------
+/ownershipEntity/ManageIndividualEntity.action.individual.name=Name
+/ownershipEntity/ManageIndividualEntity.action.individual.title=Title
+
+error.oe.company.duplicateName=Company name must be unique
+error.oe.sharetype.duplicateName=Share type name must be unique with in the company selected
+error.oe.individual.duplicateName=Individual name must be unique
+error.oe.individual.hasActiveShareholding=Share type {2} has active shareholdings
+error.oe.sharehloding.invalidownertype=Correct owner type must be selected before save the record
+error.oe.sharehloding.sharetype.notselected=Share type not selected
+error.oe.company.status.change=Active shareholdings exsists
+error.oe.sharetype.status.change=Active shareholding exsists
+error.oe.individual.status.change=Active shareholdings exsists
+
+/ownershipEntity/ManageShareType.action.company.id=Company
+/ownershipEntity/ManageShareType.action.shareType.shareName=Share Type
+/ownershipEntity/ManageShareType.action.shareType.shareTotal=Total Shares
+
+#---------
+# Process Dealer Changeover Menus
+#---------
+dealerChangeover.create.success=A new Dealer Changeover has been created successfully!
+
+dealerChangeover.cancel.header.cancel=Cancel Changeover
+dealerChangeover.cancel.header.cancelled=Changeover Cancelled
+dealerChangeover.cancel.message.cancelled.purge=The Changeover has been cancelled. All copied dealerships, locations and positions have been removed.
+dealerChangeover.cancel.message.cancelled.retain=The Changeover has been cancelled. All copied records have been retained.
+dealerChangeover.cancel.message.purge=Cancel and remove copied dealership record, all copied locations and positions assigned to staff members for the new dealership.
+dealerChangeover.cancel.message.retain=Cancel and retain all copied records.
+
+dealerChangeover.listings.table.header.oldDealerName=Previous Dealer Name
+dealerChangeover.listings.table.header.newDealerName=New Dealer Name
+dealerChangeover.listings.table.header.changeoverDate=Changeover Date
+dealerChangeover.listings.table.header.status=Status
+dealerChangeover.listings.table.actions.cancel=Cancel Changeover
+
+dealerChangeover.listings.newChangeover=New Changeover
+
+/dealerchangeover/ProcessDealerChangeover.action.selectedDealerId.valueNotPresent=A Dealer must be selected
+/dealerchangeover/ProcessDealerChangeover.action.dealerChangeover.scheduledDate.valueNotPresent=The Changeover date must be selected
+
+dealerChangeover.dealers.noChangeoverEnabledDealers=There are no active Dealers who have not yet been assigned to a changeover.
+dealerChangeover.dealers.select.prompt=Select One
+
+dealerChangeover.staff.table.header.archive=Archive
+dealerChangeover.staff.table.header.transfer=Transfer
+dealerChangeover.staff.table.header.position=Position
+dealerChangeover.staff.table.header.oldLocation=Previous Location (suburb)
+dealerChangeover.staff.table.header.newLocation=New Location (suburb)
+
+dealerChangeover.scheduledDate=Dealership changeover date and time
+
+
+#---------
+# Saved Searches
+#---------
+
+savedSearch.name=Search Label
+savedSearch.overwrite.message=You have used the name of an existing search. Overwrite or Cancel?
+savedSearch.buttons.ok=OK
+agreement.buttons.agree=I Agree
+savedSearch.buttons.cancel=Cancel
+savedSearch.buttons.overwrite=Overwrite
+
+savedSearch.action.remove=Remove
+
+# ----------------
+# My Details
+# ----------------
+mydetails.link.password.reset.own=Reset Password
+mydetails.link.password.generate.sap=Generate SAP Password
+mydetails.button.resetPassword=Reset
+oldPassword=Old password
+newPassword=New password
+confirmNewPassword=Confirm new password
+
+message.password.reset.own.success=Your password has been reset successfully!
+message.password.errors.newPassword.doesNotMatch=The Confirm new password field must match the new password
+message.password.errors.newPassword.tooShort=The new password must be at least 6 characters long
+message.password.errors.newPassword.needAtLeastOneNumber=The new password must have at least one number
+message.password.reset.own.heading=Resetting your password will affect the following user codes:
+message.password.reset.other.heading.eligibleUsercodes.moreThanOne={0} has more than one user code. The new password take effect for the following user codes:
+message.password.reset.other.heading.eligibleUsercodes.one=The new password take effect for the following user codes:
+message.password.reset.other.heading.nonEligibleUsercodes=The following user codes for {0} belong to a different dealership and the passwords for these user codes will NOT be updated:

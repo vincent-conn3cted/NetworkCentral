@@ -1,0 +1,107 @@
+/**
+* This css file provides the common style for standard HTML elements (body, form, li, etc)
+*/
+body {
+    font-size: 13px;
+    font-family: tahoma,verdana,arial,sans-serif;
+    padding: 0; margin: 0;
+    text-align:left;
+}
+
+
+
+form {  /* set width in form, not fieldset (still takes up more room w/ fieldset width */
+    margin: 0;
+    padding: 0;
+}
+
+form fieldset {
+    border-color: #000;
+    border-width: 1px;
+    border-style: solid;
+    padding: 2px;        /* padding in fieldset support spotty in IE */
+    margin: 0;
+}
+
+form fieldset legend{
+    font-weight:bold;
+}
+
+form label {
+    /*display: inline;  *//* block float the labels to left column, set a width */
+    /*float:left;*/
+    width: auto;
+    /*padding: 0;*/
+    margin: 5px 0 0; /* set top margin same as form input - textarea etc. elements */
+    text-align: right;
+    font-weight:bold;
+}
+
+form input, form textarea, form select{
+/* display: inline; inline display must not be set or will hide submit buttons in IE 5x mac */
+    width:auto;      /* set width of form elements to auto-size, otherwise watch for wrap on resize */
+    /*float:left;*/
+    margin:5px 0 0 10px; /* set margin on left of form elements rather than right of
+                              label aligns textarea better in IE */
+}
+
+/** CSS for readonly text */
+input[readonly=readonly]{border:0;}
+textarea[readonly=readonly]{border:0;}
+
+form br {
+    clear:left;
+}
+    /** Dont display continuous br on form, most likely this is because we are hiding some of the input element for a particular user role */
+    form br + br{
+        clear:none;
+        display:none;
+    }
+    form legend + br {
+        clear:none;
+        display:none;
+    }
+
+table caption{
+    font-weight:bold;
+    width:100%;
+}
+
+table th{
+    font-weight:bold;
+}
+
+h3{
+    font-weight:bold;
+    font-size:1.2em;
+}
+
+h1 {
+    font-weight:bold;
+    font-size:2em;
+}
+
+strong {
+    font-weight:bold;
+}
+
+p {
+    padding:5px;
+}
+
+div {
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+.mask
+{
+    margin:0;
+    padding:0;
+}
+
+#hover-box-pagetitle
+{
+/* for test purposes only  so tests can determine what box is displayed*/
+    display:none;
+}

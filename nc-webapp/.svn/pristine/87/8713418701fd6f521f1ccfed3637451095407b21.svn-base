@@ -1,0 +1,146 @@
+
+/** **********************************************
+*              LAYOUT STUFFS
+********************************************** */
+#container_main{
+    margin:0 auto;
+    /*position: relative;*/
+    text-align:left;
+    width:960px;
+}
+
+#container_header{
+    background:#192026 url("../../images/wib/fl-bg-container-header.gif") repeat-x scroll 0 0;
+    height:91px;
+    margin-bottom:2px;
+}
+
+#container_content{
+    margin-bottom:20px;
+}
+
+#container_footer{
+    border-top:1px solid #334458;
+    color: #D1D8DE;
+    font-size:0.9em;
+    padding:14px 16px 14px 0;
+}
+/** *************************************************
+*  For a page with two columns, left column for page sub menu, right column for the content
+************************************************* */
+div.container_col_left{
+    float:left;
+    width:200px;
+}
+div.container_col_right{
+    float:right;
+    width:750px;
+}
+/** *************************************************
+** Two column page layout, where left column
+** contains the main content, and right column
+** contains things like advertisement, etc.
+*****************************************************/
+div.twoColumnWithLeftMainContent{
+    background:transparent url(../../images/wib/fl-bg-tab-content-wrapper.gif) repeat-y scroll 100% 0;
+}
+div.twoColumnWithLeftMainContent div.leftColumn{
+     padding:10px;
+    width:750px;
+    float:left;
+}
+div.twoColumnWithLeftMainContent div.rightColumn{
+    width:166px;
+    padding:4px;
+    float:right;
+}
+div.twoColumnWithLeftMainContent div.rightColumn h2{
+    color:#3F5060;
+    font-size:1em;
+    font-weight:bold;
+    margin-bottom:0.4em;
+    padding:10px 0 0 0;
+}
+
+
+
+/**
+*  Wrapper of the page content.
+*/
+#container_content .pageContent_wrapper{
+    background-color:#E5EDF2 ;
+    float:left;
+    width:100%;
+
+}
+/**
+* Wrapper of the page content's content
+*/
+#container_content .pageContent_wrapper .mainContent_wrapper{
+        padding:4px;
+      background:transparent url("../../images/wib/light-blue-gradient-bg.jpg") repeat-x scroll 0 bottom;
+}
+    #container_content .pageContent_wrapper .mainContent_wrapper .subContent_wrapper{ padding: 5px 0; }
+    #container_content .pageContent_wrapper .mainContent_wrapper .subContent_wrapper h3.subContent_title{
+        background: #3F5060;
+        color:#E5EDF2;
+        font-size:1.1em;
+        font-weight:bold;
+        margin-bottom:10px;
+        padding:9px 10px 8px 60px;
+    }
+    #container_content .pageContent_wrapper .mainContent_wrapper .subContent_wrapper .subContent_content{
+        margin-left:5px;
+    }
+
+
+
+/** **********************************************
+* Table with three columns
+***********************************************/
+table.threeCols{background:transparent url("../../images/wib/light-blue-gradient-bg.jpg") repeat-x scroll 0 bottom;}
+    table.threeCols td, table.threeCols th{width:30%;}
+    table.threeCols td.three_col_center{ border-left:1px dotted #2D363F; border-right:1px dotted #2D363F;}
+
+table.twoCols{background:transparent url("../../images/wib/light-blue-gradient-bg.jpg") repeat-x scroll 0 bottom; }
+    table.twoCols td, table.threeCols th{width:30%;}
+    table.twoCols td.two_col_left {border-right: 1px dotted #2D363F;} 
+
+
+
+/** **********************************************
+*              HEADER
+********************************************** */
+
+#container_header #logo{
+    background:#181A21 url("../../images/fl-logo.gif") no-repeat scroll 0 0;
+    height:91px; width:172px;
+    float:left;
+}
+
+#container_header #logo a{
+    display:block;
+    height:91px; width:169px;
+    text-indent:-9999px;
+}
+
+#container_header #header_toolbar{
+    position:relative;
+    color:#D4DCE2;
+    font-size:0.9em;
+}
+#container_header #header_toolbar a{
+    color: #f79898;
+}
+
+table.searchParameters tr
+{
+    height:25px;
+}
+
+table.searchParameters th
+{
+    padding-left:2em;
+    padding-bottom:2px;
+    padding-top:2px;
+}

@@ -1,0 +1,120 @@
+/* Version:001
+	When updating the version this css you need to update the query extension 
+	in css.jsp to match the version number.
+	This is force a refresh of the cache (client side) 
+ */
+
+html{
+    background-color:#181A21;
+}
+body{
+    color: #232B33;
+    font-family:arial,helvetica,sans-serif;
+    font-size:73%;
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+table{
+    border-collapse:collapse;
+    width:100%;
+}
+
+th{
+    background-color:#3F5060;
+    border:1px solid #E8EDF0;
+    color:#FFFFFF;
+    margin:0;
+    padding-bottom:5px;
+    padding-top:5px;
+    text-align:center;
+}
+
+a,a:link,a:visited{
+    color:#232B33;
+    text-decoration:underline;
+}
+a:hover{
+    text-decoration:none;
+}
+
+fieldset{
+    padding:3px;
+    margin-bottom:8px;
+    border:1px solid #baccdb;
+    /*background:transparent url("../../images/wib/light-blue-gradient-bg.jpg") repeat-x scroll 0 bottom;*/
+}
+
+fieldset legend{
+    color:#232B33;
+    font-weight:bold;
+    font-size:1.1em;
+}
+
+
+fieldset label{
+    float:left;
+    width:20%;;
+    clear:both;
+    text-align: left;
+    font-weight:bold; /*highlight headings */
+    margin-bottom:0.5em; /* space betweeen input fields */
+    padding-left:13px;
+    padding-top:3px;
+    padding-right:3px;
+    padding-bottom:3px;
+}
+
+/** CSS for readonly text */
+input[readonly=readonly]{
+    border:0 !important;
+    background:transparent !important;
+}
+textarea[readonly=readonly]{
+    border:0 !important;
+    background:transparent !important;
+}
+/** Just for IE6, which doesnt support CSS attribute selector */
+input.readonly{
+    border:0 !important;
+    background:transparent !important;
+}
+/** Just for IE6, which doesnt support CSS attribute selector */
+textarea.readonly{
+    border:0 !important;
+    background:transparent !important;
+}
+
+input{
+    /** http://www.creativespirits.com.au/treasurechest/too-much-padding-on-buttons-in-IE.html **/
+    overflow:visible;/** IE6 uses too much padding on button. This seems to force IE to expand the button to accomodate for the correct width.  */
+    padding:2px;/** default padding*/
+}
+
+form input, form textarea, form select{ width:auto; }
+.mainContent_wrapper input, .mainContent_wrapper textarea, .mainContent_wrapper select{
+    border: 1px solid #BACCDB;
+    color: #3F5060;
+    font-size:97%;
+}
+form br{ clear:left; }
+
+strong{
+    color:#3F515F;
+}
+p{
+    margin-bottom:10px;
+}
+
+.tipMessage
+{
+    font-size:10px;
+}
+
+input.dateField
+{
+    width:95px;
+}

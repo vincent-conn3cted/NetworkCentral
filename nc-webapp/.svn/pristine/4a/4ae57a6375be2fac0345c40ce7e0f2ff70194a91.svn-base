@@ -1,0 +1,158 @@
+
+#searchOwnershipEntityPage #searchFormLayoutSection{ float:left; width:730px;padding:12px 15px; border-right:1px dotted #232B33;}
+#searchOwnershipEntityPage #maintenanceSection{ float:right; padding:12px 15px;width:160px;}
+    #searchOwnershipEntityPage #maintenanceSection li{ margin-top:5px;}
+
+#viewEntityPageHeader,
+#manageEntityPageHeader{
+    color:#E4EDF2;
+     background:#232B33 url(../../../images/wib/fl-divider-dotted-c.gif) repeat-x scroll 0 0;
+}
+
+    #viewEntityPageHeader  #pageTitleSection,
+    #manageEntityPageHeader #pageTitleSection{float:left;}
+
+    #viewEntityPageHeader #entityStatusSection,
+    #manageEntityPageHeader #entityStatusSection{float:right;margin:1em;}
+
+    #manageEntityPageHeader #changeStatusImage{
+            background:transparent url("../../../images/wib/l_button_changeStatus.gif") no-repeat scroll 0 0;
+            height:18px;
+            width:100px;
+            padding-left:2px;
+            border:0 none;
+            cursor:pointer;
+            overflow:hidden;
+            float:left;
+    }
+
+/** ***************************************************
+** Manage Shareholding page
+*******************************************************/
+#mainShareholdingSection{}
+    #mainShareholdingSection .entityDetails{margin-left:20px;}
+    #mainShareholdingSection .addEntityOption {margin-left:20px; margin-top:8px;margin-bottom:8px;}    
+    #mainShareholdingSection fieldset#shareholdingSection label {width:30%;}
+
+
+
+/** ***************************************************
+** View Entity Page
+*******************************************************/
+table#shareholdings
+{
+    width:950px;
+    margin-bottom:20px;
+}
+
+table#shareholders
+{
+    width:950px;
+    margin-bottom:20px;
+}
+
+table#shareholdings caption,
+table#shareholders caption{
+    text-align:left;
+    font-size:1.1em;
+    font-weight:bold;
+}
+
+.shareTypeName
+{
+    width: 270px;    
+}
+
+td.shareTypeName {
+    text-align: left;
+}
+
+.noOfShares
+{
+    width: 100px;
+}
+
+td.noOfShares {
+    text-align: left;
+}
+
+td.noOfShares input
+{
+    width:75px;
+}
+
+.shareTotal
+{
+    width: 100px;    
+}
+
+td.shareTotal {
+    text-align: center;
+}
+
+td.shareTotal span.formValue {
+    text-align: center;
+    float:none;
+    margin:0;
+}
+
+td.percentageOwned {
+    text-align: center;
+}
+
+.percentageOwned {
+    width: 100px;
+}
+
+td.staffDP {
+    text-align: center;
+}
+
+.staffDP {
+    width: 50px;
+}
+
+.entityName
+{
+    width: 330px;    
+}
+
+td.entityName {
+    text-align: left;
+}
+
+div#isDPImage {
+margin-left: 18px ;
+}
+
+
+
+
+
+/** ***************************************************
+** Manage Share Type page
+*******************************************************/
+#manageShareTypePage fieldset#searchEntitySection,
+#manageShareTypePage fieldset#addShareTypeSection {width:70%;}
+
+#manageShareTypePage fieldset#searchEntitySection label,
+#manageShareTypePage fieldset#addShareTypeSection label{width:30%;}
+
+#manageShareTypePage fieldset#searchEntitySection select#companySelectList{float:left;}
+#manageShareTypePage table#results{width:70%;}
+
+
+#manageShareTypePage h3.subContent_title{padding-left:30px !important;}
+#manageShareTypePage  ul.column-style-fieldset  li.leftCol{
+    border-right:1px #232B33 dotted;
+}
+
+ul.companys-dealers-items li
+{
+    display:block;
+    margin-right:10px;
+    background:transparent url("../../../images/wib/fl-bullet-red-arrow.gif") no-repeat 0 0.5em;
+    padding-left:10px;
+    padding-top:2px;
+    padding-bottom:2px;
+}

@@ -1,0 +1,345 @@
+/* Version:001
+	When updating the version this css you need to update the query extension 
+	in css.jsp to match the version number.
+	This is force a refresh of the cache (client side) 
+ */
+
+.clear{
+    clear:both;
+    display:block;
+    height:1px;
+    overflow:hidden;
+    /** The rest are hack for IE6, which still preserve a space for the div element itself.*/
+    line-height:0;
+    font-size:0;
+    padding:0;
+    margin: 0 0 -1px 0;
+}
+
+.formLabel {
+    font-weight:bold;
+    float: left;
+    display: block;
+    text-align: right;
+    margin-bottom:0.5em;
+    margin-left:1em;
+    padding: 0;
+}
+
+#loginLayoutSection .mainContent_wrapper{
+    background: #232B33 none !important;
+    color:#D1D8DE;
+}
+#loginLayoutSection table#loginTable td.applicationIntroColumn{
+    width:50%;
+    vertical-align:top;
+    border-right:1px dotted white;
+}
+#loginLayoutSection table#loginTable td.applicationIntroColumn p{
+    padding: 10px;
+}
+
+#loginLayoutSection table#loginTable td.loginFormColumn{
+    width:30%;
+    padding-left:10px;
+}
+#loginLayoutSection table#loginTable td.loginFormColumn fieldset{ background: #5B738A url(../../images/wib/searchFormBg.gif) repeat-x center bottom; }
+    #loginLayoutSection table#loginTable td.loginFormColumn fieldset label{
+        padding:6px;
+    }
+
+    #loginLayoutSection table#loginTable td.loginFormColumn fieldset input{
+        margin-top:3px;
+    }
+
+
+
+/* Some calendars are displayed on popups, and we dont want them to be displayed under the popups themselves */
+div.calendar table{width:auto;}
+.calendar {
+    z-index: 999;
+}
+
+.messageBox{
+    padding: 15px;
+    display:block;
+    margin:5px;
+}
+    .messageBox .header {
+        font-weight: bold;
+        padding: 5px 0;
+    }
+    .messageBox ul,.messageBox ol{ list-style-position:inside; }
+    .messageBox ul{ list-style:none; }
+    .messageBox ul li{
+        background:transparent url("../../images/wib/fl-bullet-red-arrow.gif") no-repeat 0 0.5em;
+        display:block;
+        padding: 2px 0 2px 11px;
+    }
+    .messageBox.errorMessage {
+        background:#FFFFFF url("../../images/wib/bg-warning.gif") repeat-x scroll 0 bottom;
+    }
+        .messageBox.errorMessage .header{ color: #CC0000; }
+        .messageBox.errorMessage li { color: #993300; }
+
+
+    .messageBox.infoMessage {
+        background:#FFFFFF url("../../images/wib/bg-success.gif") repeat-x scroll 0 bottom;
+    }
+    .messageBox.infoMessage.searchResultMessage{
+        margin-left:0;
+    }
+    .messageBox.warningMessage{
+        background-color: #ffffcc;
+    }
+
+
+
+/**
+* Select list that expand to fill the entire width of the container
+*/
+select.containerFillingList{
+    width:100%;
+    background:transparent;
+}
+
+/**
+*  Style for logging container & button
+*/
+#loggingButton {
+    background: transparent none repeat scroll 0 0;
+    border: none;
+    width: 0;
+    height: 0;
+}
+
+.instructions {
+    background:transparent url("../../images/wib/searchFormBg.gif") repeat-x scroll 0 bottom; 
+    width:auto;
+    padding:1em;
+    color:#FFFFFF;
+}
+
+
+
+
+div#container_content h1, div#bannerHeader{
+    background-color:#232B33 !important;
+    margin-bottom:10px;
+    padding:0;
+    float:left;
+}
+
+ul.column-style-fieldset{ float:left;list-style-type:none; }
+    ul.column-style-fieldset li{
+        float:left;
+        display:inline;
+        margin-right:5px;
+    }
+    ul.column-style-fieldset.oneCol li{ width: 945px; }
+    ul.column-style-fieldset.twoCols li{ width: 470px; }
+    ul.column-style-fieldset.threeCols li{ width: 300px; }
+
+.formValue {
+    float: left;
+    width: auto;
+    margin: 4px 0 0 10px;
+}
+
+/**** *******************************************************
+* Search Result Option Bar
+** *******************************************************/
+.searchResultOptions{
+    float:right;
+}
+
+
+.addImage{
+	background: url('../../images/green_tick.png') no-repeat center left;
+	height:14px; width:14px; display:inline-block; float:left;
+}
+
+.resetPasswordImage{
+	background: url('../../images/green_tick.png') no-repeat center left;
+	height:14px; width:14px; display:inline-block; float:left;
+}
+
+.discontinuePositionsImage{
+	background: url('../../images/green_tick.png') no-repeat center left;
+	height:14px; width:14px; display:inline-block; float:left;
+}
+
+
+ul.horizontalMenu{
+    list-style-type:none;
+}
+ul.horizontalMenu li{
+    float:left;
+    display:inline;
+    padding-left:5px;
+}
+
+/**** *******************************************************
+* Main content of each page
+** *******************************************************/
+/** Header of the content. i.e. page specific header **/
+.pageContent_main_header h1{
+    background: #232B33 url(../../images/wib/fl-divider-dotted-c.gif) repeat-x scroll 0 0;
+    color:#E4EDF2;
+    float:none !important;
+    font-size:1.4em;
+    font-weight:bold;
+    line-height:22px;
+    margin-top:0 !important;
+    margin-bottom:0 !important;
+    padding: 9px 10px 10px 12px !important;
+}
+
+/** For fieldset that is used to encapsulate table, we set the position to relative, so that we can set absolute position on the link to add item to the table
+at the top right corner. Also, we need to set the distance of the table from the top.*/
+fieldset.tableEncapsulatingFieldSet{ position:relative; }
+    fieldset.tableEncapsulatingFieldSet a{background:transparent !important;}  /** We dont want any image on the add links */
+    fieldset.tableEncapsulatingFieldSet a.addItemToTableLink {
+        position: absolute;
+        right: 10px; top: 10px;
+    }
+
+    fieldset.tableEncapsulatingFieldSet table { margin-top: 30px; float:left;}
+fieldset.tableEncapsulatingFieldSet thead a{color:#E8EDF0;}
+fieldset.tableEncapsulatingFieldSet tbody a{color:#536A80;}
+
+
+
+
+
+table.resultsTable{ }
+    table.resultsTable td{
+        border:1px solid #E8EDF0;
+        border-bottom:1px solid #CBCBCB;
+    }
+    table.resultsTable tr.darkRow{ background-color:#D0D7DD; } /** be consistent with YUI **/
+    table.resultsTable tr.lightRow{ background-color:#F9F9F9; } /** be consistent with YUI **/
+    table.resultsTable td div.data-line{ padding:4px 10px; } /** be consistent with YUI **/
+
+
+
+/**** *******************************************************
+* Search Result Option Bar
+** *******************************************************/
+table.form{
+    background-color:#DAE1E7;
+    width:553px;
+    list-style:none;
+}
+table.form caption{
+    border-bottom:1px dotted #232B33;
+    color:#232B33;
+    font-size:1.1em;
+    margin: 10px 0 0;
+    padding:15px 50px 5px 17px;
+    text-align:left;
+    font-weight:bold;
+    background:transparent url(../../images/wib/fl-bullet-red-arrow.gif) no-repeat scroll 1% 70%;
+}
+table.form tr{
+    height:35px;
+    background:transparent url("../../images/wib/fl-divider-dotted-bottom-a.gif") repeat-x scroll 0 bottom;
+}
+table.form th{
+    width:175px;
+    padding-left:2em; /** indented **/
+    border-right:1px dotted white;
+    text-align:left;
+}
+table.form td{
+    padding-left: 10px; /** indented **/
+}
+
+input.dateField{
+    width:10em;
+    border-bottom:1px solid #BACCDB !important; 
+}
+button.calendarTriggerBtn{
+    border:0;
+    background:transparent url("../../images/wib/pi_diagona_pack.gif") repeat scroll -250px -50px;
+    width:20px;
+    height:20px;
+    display: inline-block;
+    cursor:pointer;
+}
+button.clearCalendarBtn{
+    border:0;
+    background:transparent url("../../images/wib/pi_diagona_pack.gif") repeat scroll 2px -260px;
+    width:20px;
+    height:20px;
+    display: inline-block;
+    cursor:pointer;
+}
+div.formActionButtons{
+    margin:10px 0;
+}
+
+/*********************************************
+** Sprites
+**********************************************/
+.sprite{
+    background:transparent url("../../images/wib/free_icons.gif") repeat scroll ;
+    width:15px;
+    height:15px;
+    display: inline-block;
+}
+        .sprite.addLink{ background-position:-11px -92px; }
+        .sprite.editLink{ background-position:-139px -92px; }
+        .sprite.deleteLink{ background-position:-110px -92px; }
+
+.checkboxImage{
+    background:transparent url("../../images/wib/free_icons.gif") repeat scroll ;
+     width:15px;
+    height:15px;
+    display: inline-block;
+}
+        .unCheckedImage{
+            background: url('../../images/red_cross.gif') no-repeat center left;
+            height:14px; width:14px; display:inline-block; float:left;
+        }
+
+        .checkedImage{
+            background: url('../../images/green_tick.png') no-repeat center left;
+            height:14px; width:14px; display:inline-block; float:left;
+        }
+
+
+/** bigger icons in the pack **/
+.sprite2{
+     background:transparent url("../../images/wib/pi_diagona_pack.gif") repeat scroll ;
+    width:20px;
+    height:20px;
+    display: inline-block;   
+}
+        .sprite2.tips{background-position:-158px -101px;}
+
+/** for small icons in the pack **/
+.sprite3{
+     background:transparent url("../../images/wib/pi_diagona_pack.gif") repeat scroll ;
+    width:15px;
+    height:15px;
+    display: inline-block;
+}
+        .sprite3.tech{background-position:-227px -210px;}
+
+div#header_toolbar_application_name
+{
+    color:#FF3434;
+    font-size:30px;
+    font-weight:bold;
+}
+
+div#userInfo
+{
+    float:right;
+}
+
+.mandatory
+{
+	background: url(../../images/asterisk.png) no-repeat 0px 6px;
+}

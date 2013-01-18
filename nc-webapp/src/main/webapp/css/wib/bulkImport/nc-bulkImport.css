@@ -1,0 +1,25 @@
+#file-to-upload-input {
+    margin-left: 10px;
+}
+
+#load-for-edms-checkbox {
+    margin-left: 50px
+}
+
+#upload-button {
+    background: transparent url(../../../images/wib/buttonTemplate/medium-button.png) no-repeat;
+    color: white;
+    width: 81px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#results-container {
+    width: auto;
+    height: 250px;
+    border: 1px solid #BACCDB;
+    overflow: scroll;
+    color: #3F5060;
+    background-color: white;
+    font-family: arial,helvetica,sans-serif;
+}

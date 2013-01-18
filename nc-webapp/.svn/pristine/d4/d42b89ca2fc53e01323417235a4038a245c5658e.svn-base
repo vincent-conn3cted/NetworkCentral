@@ -1,0 +1,30 @@
+#file-to-upload-input {
+    margin-left: 10px;
+}
+
+#load-for-edms-checkbox {
+    margin-left: 50px
+}
+
+#upload-button {
+    background: transparent url(../../../images/wib/buttonTemplate/medium-button.png) no-repeat;
+    color: white;
+    width: 81px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#results-container {
+    width: auto;
+    height: 250px;
+    border: 1px solid #BACCDB;
+    overflow: scroll;
+    color: #3F5060;
+    background-color: white;
+    font-family: arial,helvetica,sans-serif;
+}
+
+
+ table.resultsTable tr.darkRow{ background-color:#D0D7DD; } /** be consistent with YUI **/
+ table.resultsTable tr.lightRow{ background-color:#F9F9F9; } /** be consistent with YUI **/
+ table.resultsTable td div.data-line{ padding:4px 10px; } /** be consistent with YUI **/

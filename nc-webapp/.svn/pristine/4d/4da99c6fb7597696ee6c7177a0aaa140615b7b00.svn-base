@@ -1,0 +1,50 @@
+div#commonValueSelectionSection{
+    float:left;
+	margin-right:5px;
+}
+div#commonValueDetailSection{
+    float:left;
+	margin-left:5px;
+}
+    div#commonValueDetailSection ul#commonValueNavigation{
+        list-style:none;
+        position:relative;
+    }
+
+    div#commonValueDetailSection ul#commonValueNavigation li{
+        display:inline;
+        margin-right:10px;
+    }
+
+/**
+*  DMS vendor page
+*/
+div#dmsVendorSelectionSection{}
+    div#dmsVendorAddEditSection fieldset#dmsVendor-dmsVendorDetailsSection {width:400px;}
+    div#dmsVendorAddEditSection fieldset#dmsVendor-dmsProductSection{width:400px;}
+    div#dmsVendorAddEditSection fieldset#dmsVendor-dmsContactSection{width:600px;}
+
+
+/**
+* Group maintenance page
+*/
+div#groupAddEditSection fieldset {width:450px;margin:2px 2px;clear:both;}
+div#groupAddEditSection fieldset#groupInfo-streetAddressSection {clear:left;float:left;}
+div#groupAddEditSection fieldset#groupInfo-postalAddressSection {clear:right;float:left;}
+div#groupAddEditSection fieldset#groupInfo-generalSection label,
+    div#groupAddEditSection fieldset#groupInfo-streetAddressSection label,
+    div#groupAddEditSection fieldset#groupInfo-postalAddressSection label,
+    div#groupAddEditSection fieldset#groupInfo-communicationSection label {float:left; width:100px;}
+div#groupAddEditSection fieldset#groupInfo-agreementSection {width:500px;}
+div#groupAddEditSection fieldset#groupInfo-agreementSection label{float:left; width:250px;}
+
+
+
+/**
+*  TMCA Staff maintenance page
+*/
+div#tmcaStaffAddEditSection label{float:left;width:100px;}
+div#tmcaStaffAddEditSection fieldset{width:400px;}
+
+
+

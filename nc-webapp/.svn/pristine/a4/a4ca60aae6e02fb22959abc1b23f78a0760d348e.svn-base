@@ -1,0 +1,55 @@
+#------
+# Admin menu
+#------
+menu.drop-down=Manage Drop Down Lists
+menu.position-type=Manage Position Types
+menu.pma=Manage PMAs
+menu.open-points=View Open Points
+menu.groups=Manage Groups
+menu.tmca-representatives=Manage TMCA Field Representatives
+menu.dms-vendors=Manage DMS Vendors
+menu.tmca-access=Maintain TMCA Access
+
+
+#------
+# Manage Drop Down list
+#------
+manage.dropdown.header=Manage Drop Down List Values
+
+#------
+# Manage PMA
+#------
+manage.pma.header=Manage PMA
+
+
+
+#------
+# Manage TMCA Field Representatives
+#------
+manage.tmcafieldreps.header=Manage TMCA Field Representatives
+manage.tmcafieldreps.description=Select a TMCA Field Representative to edit or create a new TMCA Field Representative
+
+
+#-----
+# Manage Position types
+#-----
+manage.positiontypes.header=Manage Position Types
+
+
+#-----
+# Manage Group
+#-----
+manage.group.header=Manage Group
+
+
+#-----
+# Manage DMS Vendor
+#-----
+manage.dmsvendor.header=Manage DMS Vendors
+
+#-----
+# View Open Points
+#-----
+manage.openpoints.header=Open Points
+manage.openpoints.description=The following PMAs do not have a dealership allocated
+no.openpoints=There isn't any open points.

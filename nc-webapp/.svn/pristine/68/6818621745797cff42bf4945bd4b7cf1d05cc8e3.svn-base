@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weblogic-web-app xmlns="http://www.bea.com/ns/weblogic/90"
+                  xmlns:jee="http://java.sun.com/xml/ns/j2ee"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://www.bea.com/ns/weblogic/90 http://www.bea.com/ns/weblogic/90/weblogic-web-app.xsd
+                                      http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    <jsp-descriptor>
+        <keepgenerated>true</keepgenerated>
+        <precompile>true</precompile>
+        <debug>true</debug>
+    </jsp-descriptor>
+
+    <security-role-assignment>
+        <role-name>DealerUpdater</role-name>
+        <principal-name>BPAdmin</principal-name>
+    </security-role-assignment>
+
+    <security-role-assignment>
+        <role-name>NationalAdministrator</role-name>
+        <principal-name>networkcentral.NationalAdmin</principal-name>
+    </security-role-assignment>
+
+    <security-role-assignment>
+        <role-name>NationalFranDev</role-name>
+        <principal-name>networkcentral.NationalFDD</principal-name>
+    </security-role-assignment>
+
+    <security-role-assignment>
+        <role-name>NationalCSD</role-name>
+        <principal-name>networkcentral.NationalCSD</principal-name>
+    </security-role-assignment>
+
+    <security-role-assignment>
+        <role-name>NationalSales</role-name>
+        <principal-name>networkcentral.NationalSales</principal-name>
+    </security-role-assignment>
+
+    <security-role-assignment>
+        <role-name>Support</role-name>
+        <principal-name>networkcentral.Support</principal-name>
+    </security-role-assignment>
+
+    <security-role-assignment>
+        <role-name>NationalCR</role-name>
+        <principal-name>networkcentral.NationalCR</principal-name>
+    </security-role-assignment>
+
+    <security-role-assignment>
+        <role-name>Lexus</role-name>
+        <principal-name>networkcentral.NationalLexus</principal-name>
+    </security-role-assignment>
+
+    <security-role-assignment>
+        <role-name>RegionalFranDev</role-name>
+        <principal-name>networkcentral.NorthRegFDD</principal-name>
+        <principal-name>networkcentral.SouthRegFDD</principal-name>
+        <principal-name>networkcentral.CentralRegFDD</principal-name>
+        <principal-name>networkcentral.WesternRegFDD</principal-name>
+        <principal-name>networkcentral.EasternRegFDD</principal-name>
+    </security-role-assignment>
+
+
+    <security-role-assignment>
+        <role-name>RegionalCSD</role-name>
+        <principal-name>networkcentral.NorthRegCSD</principal-name>
+        <principal-name>networkcentral.SouthRegCSD</principal-name>
+        <principal-name>networkcentral.CentralRegCSD</principal-name>
+        <principal-name>networkcentral.WesternRegCSD</principal-name>
+        <principal-name>networkcentral.EasternRegCSD</principal-name>
+    </security-role-assignment>
+
+
+    <security-role-assignment>
+        <role-name>RegionalSales</role-name>
+        <principal-name>networkcentral.NorthRegSales</principal-name>
+        <principal-name>networkcentral.SouthRegSales</principal-name>
+        <principal-name>networkcentral.CentralRegSales</principal-name>
+        <principal-name>networkcentral.WesternRegSales</principal-name>
+        <principal-name>networkcentral.EasternRegSales</principal-name>
+    </security-role-assignment>
+
+
+
+
+    <session-descriptor>
+           <!-- replicate session data in the cluster to work with fail over -->
+           <persistent-store-type>replicated_if_clustered</persistent-store-type>
+       </session-descriptor>
+
+
+
+    <container-descriptor>
+        <session-monitoring-enabled>true</session-monitoring-enabled>
+        <save-sessions-enabled>true</save-sessions-enabled>
+        <prefer-web-inf-classes>true</prefer-web-inf-classes>
+        <allow-all-roles>true</allow-all-roles>
+    </container-descriptor>
+
+
+    <resource-description>
+        <res-ref-name>${nc.jndi.jdbc.name}</res-ref-name>
+        <jndi-name>${nc.jndi.jdbc.name}</jndi-name>
+    </resource-description>
+
+
+    <context-root>${nc.context.root.webapp}</context-root>
+</weblogic-web-app>

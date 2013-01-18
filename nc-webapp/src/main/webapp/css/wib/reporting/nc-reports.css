@@ -1,0 +1,70 @@
+
+
+
+table#networkSummaryTable{}
+    table#networkSummaryTable thead th{
+        background-color:#596B7F;
+        color:#E5EDF2;
+        border-right:1px solid #E8EDF0;
+    }
+    table#networkSummaryTable tbody td{
+        background: url("../../../images/wib/fl-divider-dotted-b.gif") repeat-x 0 100%; 
+        color:#232B33;
+        border-right:1px solid #E8EDF0;
+        padding:10px 15px;
+    }
+    table#networkSummaryTable .networkData{
+        text-align:center;
+    }
+    table#networkSummaryTable a.listNetowrkSummaryExpandRowLink,
+    table#networkSummaryTable a.listNetowrkSummaryCollapseRowLink{
+       width:10px;
+        height:10px;
+        margin-left:5px;
+    }
+    table#networkSummaryTable a.listNetowrkSummaryExpandRowLink{
+        background:transparent url(../../../images/wib/fl-bullet-red-arrow.gif) no-repeat scroll 0 50%;
+    }
+    table#networkSummaryTable a.listNetowrkSummaryCollapseRowLink{
+        background:transparent url(../../../images/wib/fl-bullet-red-arrow-down.gif) no-repeat scroll 0 50%;
+    }
+    table#networkSummaryTable tr.listNetworkSummaryLevel1 .listNetworkSummaryRowLabel,
+    table#networkSummaryTable tr.listNetworkSummaryLevel2 .listNetworkSummaryRowLabel{ margin-left:5px; }
+             table#networkSummaryTable tr.listNetworkSummaryLevel2 a.listNetowrkSummaryExpandRowLink,
+             table#networkSummaryTable tr.listNetworkSummaryLevel2 a.listNetowrkSummaryCollapseRowLink{
+                 margin-left:15px;
+             }
+    table#networkSummaryTable tr.listNetworkSummaryLevel3 .listNetworkSummaryRowLabel{ margin-left:30px; }
+
+.listNetworkSummaryRow {
+    display:none;
+}
+
+.listNetworkSummaryLevel1 {
+    display:table-row;
+}
+    .listNetworkSummaryLevel1 .listNetworkSummaryRowLabels,
+    .listNetworkSummaryLevel2 .listNetworkSummaryRowLabels{
+        font-weight:bold;
+    }
+
+table#networkSummaryTable tr.listNetworkSummaryLevel1 td {
+    background-color: #D0D7DD;
+}
+    table#networkSummaryTable tr.listNetworkSummaryLevel2 td {
+        background-color:#EEEEEE;
+    }
+        table#networkSummaryTable tr.listNetworkSummaryLevel3 td {
+            background-color:#FFFFFF;
+        }
+
+table#networkSummaryTable tr td span.listNetworkSummaryRowLabel.principalLocationRow1
+{
+    font-weight:bold;
+    color:#FF3434;
+}
+table#networkSummaryTable tr td span.listNetworkSummaryRowLabel.locationRow1
+{
+    font-weight:bold;
+    color:black;
+}

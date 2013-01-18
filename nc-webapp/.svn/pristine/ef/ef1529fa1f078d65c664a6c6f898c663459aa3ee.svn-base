@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+">
+    <context:component-scan base-package="au.com.toyota.nc.common"/>
+
+    <jee:jndi-lookup id="ncDataSource" jndi-name="java:comp/env/${nc.jndi.jdbc.name}"/>
+
+    <import resource="classpath:/applicationContext-persistence.xml"/>
+    <import resource="classpath:/applicationContext-ldap.xml"/>
+    <import resource="classpath:/applicationContext-scheduler.xml"/>
+    <import resource="classpath:/applicationContext-emails.xml"/>
+    <import resource="classpath:/nc-security/applicationContext-ncSecurity.xml"/>
+    <import resource="classpath:/applicationContext-mbeans.xml"/>
+    <import resource="classpath:/applicationContext-links.xml"/>
+    <import resource="classpath:/applicationContext-reports.xml"/>
+
+    <context:component-scan base-package="au.com.toyota.nc.webapp"/>
+    
+    <context:annotation-config/>
+    
+    <bean id="ldapLookupHelper" class="au.com.toyota.nc.common.utils.LdapLookupHelper" autowire="byName">
+ 		<property name="context" value="com.sun.jndi.ldap.LdapCtxFactory"/>
+ 		<property name="url" value="${ldap.url}"/>
+ 		<property name="principal" value="${ldap.userdn}"/>
+ 		<property name="credentials" value="${ldap.password}"/>
+ 		  
+ 	</bean>
+ 	 
+</beans>
+

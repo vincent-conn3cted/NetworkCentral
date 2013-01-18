@@ -1,0 +1,14 @@
+<%@ include file="/WEB-INF/jsp/taglibs.jsp" %>
+<stripes:hidden name="searchReq.dealerStaffNo"/>
+<stripes:hidden name="searchReq.firstname"/>
+<stripes:hidden name="searchReq.surname"/>
+<stripes:hidden name="searchReq.dealerName"/>
+<stripes:hidden name="searchReq.locationSuburb"/>
+<stripes:hidden name="searchReq.locationState"/>
+<stripes:hidden name="searchReq.dealerRegion"/>
+<stripes:hidden name="searchReq.department"/>
+<stripes:hidden name="searchReq.position"/>
+<stripes:hidden name="searchReq.appointmentId"/>
+<stripes:hidden name="searchReq.locationId"/>
+<stripes:hidden name="searchReq.franchise"/>
+<stripes:hidden name="searchReq.myDealer"/>

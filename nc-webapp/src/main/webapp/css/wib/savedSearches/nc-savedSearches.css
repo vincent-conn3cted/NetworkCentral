@@ -1,0 +1,14 @@
+table#savedSearches{
+    width:400px;
+    margin:10px 0;
+}
+
+
+div.savedSearchesOptions{}
+    div.savedSearchesOptions ul.searchTypeOptions{
+        list-style:none;
+    }
+    div.savedSearchesOptions ul.searchTypeOptions li{
+        display:inline;
+        margin-right:10px;
+    }

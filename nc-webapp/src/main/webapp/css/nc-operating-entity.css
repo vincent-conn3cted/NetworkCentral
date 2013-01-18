@@ -1,0 +1,123 @@
+
+.partyName {
+    /*font-size: 10px;*/
+    width: 80em;
+    text-align: left;
+}
+
+.partyType {
+    /*font-size: 10px;*/
+    width: 20em;
+    text-align: left;
+}
+
+.partyStatus {
+    /*font-size: 10px;*/
+    width: 15em;
+    text-align: left;
+}
+
+.rowEdit {
+    /*font-size: 10px;*/
+    width: 10em;
+    text-align: left;
+}
+
+.rowSelect {
+    /*font-size: 10px;*/
+    width: 10em;
+    text-align: left;
+}
+
+.shareTypeName {
+    /*font-size: 10px;*/
+    width: 30em;
+    text-align: left;
+}
+
+.shareTotal {
+    /*font-size: 10px;*/
+    width: 13em;
+    text-align: right;
+}
+
+.entityName {
+    /*font-size: 10px;*/
+    width: 40em;
+    text-align: left;
+}
+
+.noOfShares {
+    /*font-size: 10px;*/
+    width: 12em;
+    text-align: right;
+}
+
+.percentageOwned {
+    /*font-size: 10px;*/
+    width: 8em;
+    text-align: right;
+}
+
+.staffDP {
+    /*font-size: 10px;*/
+    width: 8em;
+    text-align: left;
+}
+
+.hide{
+    visibility:hidden;
+}
+.show{
+    visibility:visible;
+}
+
+
+form#ownershipEntityResultForm Div{float:left;clear:both; width:100%;margin:2px 2px;}
+
+div#mainShareholdingSection{padding-left: 1em; padding-right: 1em;}
+	div#companyOwnedSection{
+        display:inline-block;
+	    line-height:1.1em;
+	    width: 22%;
+	}
+
+    div#companyOwnedSection FIELDSET{
+        padding-bottom: .1em;
+        padding-right: .1em;
+    }
+
+	div#shareholdingSection{
+        display:inline-block;
+        line-height:1.1em;
+	    width: 50%;
+	}
+	div#shareholderSection{
+        display:inline-block;
+	    line-height:1.1em;
+	    width: 22%;
+	}
+
+table.resultsTable
+{
+    border:black solid 1px;
+    padding:5px;
+    min-width:700px;
+    width:700px;
+}
+
+table.resultsTable thead
+{
+    font-weight:bold;
+}
+
+table.resultsTable td
+{
+    border:black solid 1px;
+    padding:5px;
+}
+
+table.resultsTable td input
+{
+    padding-left:0px;
+}

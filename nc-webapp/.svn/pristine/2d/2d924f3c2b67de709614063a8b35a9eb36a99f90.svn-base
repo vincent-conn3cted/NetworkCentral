@@ -1,0 +1,250 @@
+@charset "utf-8";
+/* CSS Document */
+body {font-size:80%;}
+
+img {border:0px;}
+/* Header elements */
+.banner_footer {
+    float:left; clear: both; font-size: small; font-style: italic;
+}
+
+H1 {font-size:1.3;font-weight:bold;}
+
+/* Page elements */
+
+/* Global Navigation */
+.nav {margin:0;list-style:none;padding:0;} /* reset margin and padding for different browsers */
+.nav li {float:left;padding:1em;}
+.nav li a{color:#ffffff;font-weight:bold;}
+.nav li a:hover {color:#ccc;}
+/* secondary menu */
+.secondary{margin:0;list-style:none;padding:0;}
+.secondary li {float:left;padding: 0.5em 0.5em 0.5em 1em ;}
+
+.menu {float:left;text-align:left;margin:1em 0 1em 1em;min-width:45%;width:45%;}/* width for IE6 */
+.item {}
+
+
+.hd {background-color:#ff0000;}
+
+.userInfo {font-size:0.8em}
+
+
+.formList {margin:0;list-style:none;padding:0;}
+
+.hide {display:none;}
+}
+
+.head {margin:1em 0 1em 1em;}
+
+.instructions {background-color:#ffffcc;width:auto;border:solid 1px #000;padding:1em}
+
+form {  /* set width in form, not fieldset (still takes up more room w/ fieldset width */
+    margin: 0;
+    padding: 0;
+    width:100%;
+}
+
+form li {list-style:none;}
+form ul {margin:0;padding:0;}
+
+
+.legend {margin-left:1em;margin-bottom:1em;font-size:1.2em;font-weight:bold;}
+
+.dealertab{background-color:#CCC;padding:3px;margin:0 0 1em 0;width:auto;overflow:visible;}
+
+.buttonmenu{margin-top:1em;}
+.buttonmenu li {float:left;width:auto;overflow:visible;}
+.buttonmenu li form {width:auto;}
+
+label {
+    float:left;
+    width:40%;
+    clear:both;
+    text-align: left;
+    font-weight:bold; /*highlight headings */
+    margin-bottom:0.5em; /* space betweeen input fields */
+    padding:3px;
+    margin-left:1em; /* indented */
+           background-color:#eee;/*" testing purposes*/
+    
+}
+form input, form textarea, form select{
+    margin-bottom:0.5em;
+     /* set margin on left of form elements rather than right of label aligns textarea better in IE */
+}
+
+
+button {
+    float:left;
+}
+
+/* menu links throughout app */
+.links{margin-left:1em;margin-bottom:1em;margin-top:1em;}/* spacing*/
+
+/* place the radio buttons for saved search */
+.searchTypeOptions {list-style:none;}
+.searchTypeOptions li {float:left;padding:1em;}
+
+/**
+*  Style for popup dialog
+*/
+div.dialog { width:30em;}
+    div.dialog label { display: block; float: left; text-align: right; width: 100px; margin: 5px 0 0; background-color:#ff0000; }
+    div.dialog input, div.dialog select, div.dialog textarea { width: auto; float: left; margin: 5px 0 0 10px; }
+    div.dialog br { clear: left; }
+
+
+.messageBox{
+        /*float: left;*/
+    clear: both;
+    border: 1px black solid;
+    padding: 15px;
+    width:auto;
+    margin-bottom:1em;
+}
+    .messageBox .header {
+        font-weight: bold;
+        padding: 5px 0;
+    }
+    .messageBox.errorMessage {
+        background-color: #ccc;
+    }
+        .messageBox.errorMessage li {
+            color:#993300;
+        }
+    .messageBox.infoMessage {
+        background-color: #ccffcc;
+    }
+
+    .messageBox.warningMessage{
+        background-color: #ffffcc;
+    }
+
+/**
+*  Style for logging container & button
+*/
+#loggingButton {
+    background: transparent none repeat scroll 0 0;
+    border: none;
+    width: 0;
+    height: 0;
+}
+
+/* Some calendars are displayed on popups, and we dont want them to be displayed under the popups themselves */
+.calendar {
+    z-index: 999;
+}
+
+button.calendarTriggerBtn {
+    background: transparent url( "../images/jscalendar/img.gif" ) no-repeat;
+    width: 22px;
+}
+
+.checkedImage{
+	background: url('../images/green_tick.png') no-repeat center left;
+	height:14px; width:14px; display:inline-block; float:left;
+}
+
+.addImage{
+	background: url('../images/green_tick.png') no-repeat center left;
+	height:14px; width:14px; display:inline-block; float:left;
+}
+
+.resetPasswordImage{
+	background: url('../images/green_tick.png') no-repeat center left;
+	height:14px; width:14px; display:inline-block; float:left;
+}
+
+.discontinuePositionsImage{
+	background: url('../images/green_tick.png') no-repeat center left;
+	height:14px; width:14px; display:inline-block; float:left;
+}
+
+
+.unCheckedImage{
+	background: url('../images/red_cross.gif') no-repeat center left;
+	height:14px; width:14px; display:inline-block; float:left;
+}
+
+.formValue {
+    float: left;
+    width: auto;
+    margin: 5px 0 0 3px;
+}
+
+.formSpan {
+    float: left;
+    width: auto;
+    margin: 5px 0 0 10px;
+}
+.formTh {
+    float: left;
+    width: auto;
+    margin: 0 0 0 10px;
+}
+
+.formLabel {
+    float: left;
+    display: block;
+    text-align: right;
+    margin: 5px 0 0;
+    padding: 0;
+}
+
+input.error,textarea.error{
+    background:#ff9999;
+}
+
+span.readOnlyFormValue{
+    float:left;
+    margin:5px 5px 0;
+}
+
+
+.left{
+	float:left;
+    display:inline-block;
+}
+
+.right{
+    float:right;
+    display:inline-block;
+}
+
+.noOfRecords {
+    padding:1em;
+    font-weight:bold;
+}
+/** For fieldset that is used to encapsulate table, we set the position to relative, so that we can set absolute position on the link to add item to the table
+at the top right corner. Also, we need to set the distance of the table from the top.*/
+
+/* auto complete for dealer search */
+#dealerNameSearchResultContainer {width:40%;}
+
+#selectedDealerStaffLanguages li, #addDealerStaffAppointmentDepartmentsValues li
+{
+    display: inline;
+    list-style-type: none;
+    padding-right: 10px;
+}
+
+.addDealerStaffAppointment
+{
+    max-width:750px;
+    width:750px;
+}
+
+.addDealerStaffAppointmentProvisionalIndicator
+{
+    text-align:center;
+    width:100px;
+    max-width:100px;
+    position:static;
+    float:right;
+    color:red;
+    font-weight:bold;
+    font-size:14px;
+    margin-top:20px;
+    margin-right:20px;
+}

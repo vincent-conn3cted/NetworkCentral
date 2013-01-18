@@ -1,0 +1,12 @@
+/** Simple modifications needed for DropDownCheckList to take advantage of ThemeRoller settings */
+.ui-dropdownchecklist .ui-widget-content, .ui-dropdownchecklist .ui-widget-header {
+	border-color: #5794bf;
+	background-color: #E5EDF2;
+	border: 1px solid #999;
+}
+
+.ui-dropdownchecklist-selector {
+	height: 20px;
+	border: 1px solid #ddd;
+	background-color: #E5EDF2;
+}
