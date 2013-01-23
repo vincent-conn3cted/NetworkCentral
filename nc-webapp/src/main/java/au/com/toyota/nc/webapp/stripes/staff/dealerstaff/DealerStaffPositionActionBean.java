@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
@@ -679,14 +680,21 @@ public class DealerStaffPositionActionBean extends BaseActionBean
 			trainingManagers = getTrainingManagerIncludingCurrentAppointment(selectedDealerId, currentAppointmentTrainingManagerId);
 		}
 		
-		Iterator<TrainingApprovalMgr> iter = trainingManagers.iterator();
-		while (iter.hasNext()) {
-			if (!checkLoop(getAppointment(), iter.next(), 5 ))
-			{
-				iter.remove();
+		if ((getAppointment()!= null) && (getAppointment().getAppointmentId() != null) && (getAppointment().getPerson() != null))
+		{
+			Iterator<TrainingApprovalMgr> iter = trainingManagers.iterator();
+			
+			while (iter.hasNext()) {
+				if (!checkLoop(getAppointment().getPerson().getPersonId()+"", iter.next(), 5 ))
+				{
+					iter.remove();
+				}
+				
 			}
+			
+			
 		}
-		
+				
 		return trainingManagers;
 	}
 
@@ -709,55 +717,57 @@ public class DealerStaffPositionActionBean extends BaseActionBean
 		this.dpGmrFlag = dpGmrFlag;
 	}
 	
-	private boolean checkLoop(Appointment apt, TrainingApprovalMgr trainMgr,  int limit ){
+	//detect loop, if false then there is a loop, otherwise there is no loop
+	private boolean checkLoop(String selfId, TrainingApprovalMgr trainMgr,  int limit ){
 		
-		//if the appointment is new, by no means it can cause a loop
-		if ((apt.getAppointmentId() == null) || (apt.getAppointmentId() == -1))
-			return true;
-		
-		//if the training manager is null, the check is successful.
-		if (trainMgr == null)
-			return true;
-		
-		if (apt.getPerson() == null)
-            return true;
-		
-		Long selfId = apt.getPerson().getPersonId();
-		
-		Appointment apt1 = appointmentServices.get(trainMgr.getAppointment_id()); 
-		
-		if (apt1.getPerson() == null)
-			return true;
-		
-		//cannot select itself as training manager.
-		if (apt.getPerson().getPersonId().equals(apt1.getPerson().getPersonId()))
-			return false;
-		
-		
-		apt = apt1;
-				
-		
-		for (int i=0; i<limit; i++)
+		if (limit == 0)
 		{
-			if ((apt.getTrainingManager() == null) ||  (apt.getTrainingManager().getAppointmentId() == -1))
-			{
-			    return true;	
-			}
-			
-			if ((apt.getTrainingManager().getPerson() == null))
-			{
-			    return true;	
-			}
-
-			if (selfId.equals(apt.getTrainingManager().getPerson().getPersonId()))
-			{
-				return false;
-			}
-									
-		    apt = appointmentServices.get(apt.getTrainingManager().getAppointmentId()); 
-		    			    	
+			return true;
+		}
+				
+		if ((selfId == null) || (selfId == "")) 
+		{
+		    return true;	
 		}
 		
-		return true;		
+		if (selfId.equals(trainMgr.getPersonId()+""))
+		{
+			return false;
+		}		
+					
+        DealerStaff staff = staffServices.getDealerStaff(trainMgr.getPersonId());
+        
+		Set<Appointment>  appointments = staff.getAppointments();	
+				
+		for(Appointment apptment: appointments )
+		{
+	    	
+	    	if (!apptment.getDateRange().isActive())
+	    	{
+	    		continue;
+	    	}
+	    	
+	    	if (apptment.isProvisionalIndicator())
+	    	{
+	    		continue;
+	    	}
+									
+			if (apptment.getTrainingManager() != null)
+			{
+				trainMgr = new TrainingApprovalMgr();
+				
+				trainMgr.setAppointment_id(apptment.getTrainingManager().getAppointmentId());
+				
+				trainMgr.setPersonId(apptment.getTrainingManager().getPerson().getPersonId());
+				
+				if (!checkLoop(selfId, trainMgr, limit - 1))
+				{
+					return false;
+				}
+			}
+			
+		}
+			
+	    return true;	
 	}
 }

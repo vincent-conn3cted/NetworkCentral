@@ -98,7 +98,7 @@ public class ApprovingManagerActionBean extends BaseDealerLocationActionBean {
 			
 			if (toBeSavedList.contains(apt))
 			{
-				if  (!checkLoop(apt, 5))
+				if  (!checkLoop(apt, 5, apt.getPersonId()))
 			    {
 			    	addLocalizableGlobalError("validation.trainingApprovalManager.loop", new Object[]{apt.getAppointmentDescription()});
 			    }
@@ -417,32 +417,53 @@ public class ApprovingManagerActionBean extends BaseDealerLocationActionBean {
 		return toBeSavedList;
 	}
 	
-	private boolean checkLoop(ChangeAppointment apt, int limit ){
+	//detect loop, if false then there is a loop, otherwise there is no loop
+	private boolean checkLoop(ChangeAppointment apt, int limit, String selfId ){
 		
-		String selfId = apt.getPersonId(); 
-		
-		
-		for (int i=0; i<limit; i++)
+		if (limit == 0)
 		{
-			//if there is no training manager, the check is OK
-			if (apt.getTrainMgr() == null) 
-			{
-			    return true;	
-			}
+			return true;
+		}
+				
+		if (apt.getTrainMgr() == null) 
+		{
+		    return true;	
+		}
+		
+		if (selfId.equals(apt.getTrainPersonId()))
+		{	
+			return false;
+		}
+				
+			    
+        DealerStaff staff = staffServices.getDealerStaff(Long.parseLong(apt.getTrainPersonId()));
+		
+		Set<Appointment>  appointments = staff.getAppointments();
+		
+		Boolean found = false;
+		
+		Long dealerId = staffServices.getDealerIDForGivenUserID(getContext().getLoginId());
+			    
+	    for(Appointment apptment : appointments)
+	    {	    	
+	   	
+	    	if (!apptment.getDateRange().isActive())
+	    	{
+	    		continue;
+	    	}
+	    	
+	    	
+	    	if (apptment.isProvisionalIndicator())
+	    	{
+	    		continue;
+	    	}
+	    	
+	    	found = false;
 			
-            //cannot select as training manager 
-			if (selfId.equals(apt.getTrainPersonId()))
-			{	
-				return false;
-			}
-									
-		    boolean found = false;
-		    
-		    
-		    //First check the web page
+			//First check the web page
 		    for (ChangeAppointment apt1: changeAppointment)
 		    {
-		    	if (apt.getTrainMgr().equals( apt1.getId()))
+		    	if ((apptment.getAppointmentId()+"").equals( apt1.getId()))
 		    	{
 		    		apt = apt1;
 		    		found = true;
@@ -451,30 +472,28 @@ public class ApprovingManagerActionBean extends BaseDealerLocationActionBean {
 		    }
 		    
 		    if (!found)
-		    {
-		    	Appointment appointment = appointmentServices.get(Long.parseLong(apt.getTrainMgr())); 
-		    	
-		    	if ((appointment.getTrainingManager() == null) || (appointment.getTrainingManager().getAppointmentId() == -1)) 
-		    	{
-		    		return true;
-		    	}
-		    	
-		    	if (appointment.getTrainingManager().getPerson()==null)
-		    	{
-		    		return true;
-		    	}		    	
-		    	
+		    {	
 		    	apt = new ChangeAppointment();
-		    		   
-		    	apt.setTrainMgr(appointment.getTrainingManager().getAppointmentId()+"");
 		    	
-		    	apt.setId(appointment.getAppointmentId()+"");
+		    	if ((apptment.getTrainingManager() == null) || (apptment.getTrainingManager().getAppointmentId() == -1)) 
+		    	{
+		    		apt.setTrainMgr(null);
+		    		apt.setTrainPersonId(null);
+		    	}
+		    	else
+		    	{
+		    		apt.setTrainMgr(apptment.getTrainingManager().getAppointmentId()+"");
+		    		apt.setTrainPersonId(apptment.getTrainingManager().getPerson().getPersonId()+"");
+		    	}
 		    			    	
-		    	apt.setTrainPersonId(appointment.getTrainingManager().getPerson().getPersonId()+"");
+		    	apt.setId(apptment.getAppointmentId()+"");
 		    }
-		}
+	  				    
+	    	if (!checkLoop(apt, limit - 1, selfId))
+	    		return false;
+	    }
 		
-		return true;		
+		return true;
 	}
 	
 }
