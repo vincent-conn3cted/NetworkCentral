@@ -223,7 +223,7 @@ public class DealerStaffPositionActionBean extends BaseActionBean
             sapUsernameModificationHandler.handle(oldSapUsername, appointment.getSapInfo().getUsername(), appointment);
         }
         prepareAndSetPositionPositonDefinition();
-        //appointment = appointmentTopology.update(appointment, appointmentDepartments, this.selectedPositionId);
+        appointment = appointmentTopology.update(appointment, appointmentDepartments, this.selectedPositionId);
 
         return redirectToEditStaff();
     }
