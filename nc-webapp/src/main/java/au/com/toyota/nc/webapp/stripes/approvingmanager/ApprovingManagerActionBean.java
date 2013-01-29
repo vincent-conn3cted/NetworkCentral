@@ -441,8 +441,6 @@ public class ApprovingManagerActionBean extends BaseDealerLocationActionBean {
 		Set<Appointment>  appointments = staff.getAppointments();
 		
 		Boolean found = false;
-		
-		Long dealerId = staffServices.getDealerIDForGivenUserID(getContext().getLoginId());
 			    
 	    for(Appointment apptment : appointments)
 	    {	    	

@@ -29,7 +29,6 @@ import org.joda.time.DateTime;
 import au.com.toyota.nc.common.comparartors.GenericComparator;
 import au.com.toyota.nc.common.dealers.exceptions.InvalidDealerException;
 import au.com.toyota.nc.common.helper.AppointmentHelper;
-import au.com.toyota.nc.common.model.ChangeAppointment;
 import au.com.toyota.nc.common.model.DateRange;
 import au.com.toyota.nc.common.model.DealerStaffSearchRequest;
 import au.com.toyota.nc.common.model.DealerStaffSearchResponse;
@@ -67,6 +66,7 @@ public class DealerStaffPositionActionBean extends BaseActionBean
     private static final String GET_POSITION_DEFINITIONS_AS_PER_SELECTED_POSITION = "getPositionDefinitionsAsPerSelectedPosition";
     private static final String APPOINTMENT_LINKS_FOUND = "APPOINTMENT_LINKS_FOUND";
     private static final String INVALID_TRAINING_APPROVAL_MANAGER = "INVALID_TRAINING_APPROVAL_MANAGER";
+   
     
     @SpringBean
     private SapUsernameModificationHandler sapUsernameModificationHandler;
@@ -93,6 +93,8 @@ public class DealerStaffPositionActionBean extends BaseActionBean
     private Long selectedDealerId;
     
     private Long dpGmrFlag;   
+    
+    private String personId;
 
     private List<Department> appointmentDepartments;
 
@@ -107,6 +109,7 @@ public class DealerStaffPositionActionBean extends BaseActionBean
     private List<PositionDefinition> positionDefinitions;
     
     private List<TrainingApprovalMgr> trainingManagers;
+    
 
     @HandlesEvent("add")
     public Resolution add()
@@ -220,7 +223,7 @@ public class DealerStaffPositionActionBean extends BaseActionBean
             sapUsernameModificationHandler.handle(oldSapUsername, appointment.getSapInfo().getUsername(), appointment);
         }
         prepareAndSetPositionPositonDefinition();
-        appointment = appointmentTopology.update(appointment, appointmentDepartments, this.selectedPositionId);
+        //appointment = appointmentTopology.update(appointment, appointmentDepartments, this.selectedPositionId);
 
         return redirectToEditStaff();
     }
@@ -264,6 +267,7 @@ public class DealerStaffPositionActionBean extends BaseActionBean
             ensureStartDateOnOrBeforeToday();
             validateSapUsername();
             validateTrainingManager(true);
+            validateApprovalChain();
         }
     }
 
@@ -615,23 +619,42 @@ public class DealerStaffPositionActionBean extends BaseActionBean
     private void validateTrainingManager(boolean includeLocalizableValidationError){
     	
         if(getAppointment().getTrainingManager() != null && getAppointment().getTrainingManager().getAppointmentId() != -1){
-        	
+        	  	
         	if (getAppointment().isDpGmrAppointment())
         	{
         		addLocalizableGlobalError("validation.trainingApprovalManager.no.need");
         	}
-        	
+        	       	
     		List<Appointment> result = appointmentServices
     		.findActiveTrainingManagerAppointmentById(getAppointment().getTrainingManager().getAppointmentId());
-    		
+    		    		
     		if(result == null || result.size() == 0){
     			if(includeLocalizableValidationError){
     				addLocalizableValidationError("Training Approval Manager", "validation.invalid.trainingApprovalManager");
     			}
                 context.getRequest().setAttribute(INVALID_TRAINING_APPROVAL_MANAGER, getAppointment().getTrainingManager().getAppointmentId().toString());
     		}
+    			
+    		
         }
     }
+    
+    
+    /**
+     * Validate the approval chain
+     *
+     */	
+    private void validateApprovalChain(){
+		TrainingApprovalMgr approvalMgr = new TrainingApprovalMgr();
+		approvalMgr.setAppointment_id(getAppointment().getTrainingManager().getAppointmentId());
+		Appointment apt = appointmentServices.get(getAppointment().getTrainingManager().getAppointmentId());
+		approvalMgr.setPersonId(apt.getPerson().getPersonId());
+    	if  (getAppointment().getTrainingManager()!= null && getAppointment().getPerson() !=null && (!checkLoop(getAppointment().getPerson().getPersonId()+"", approvalMgr, 5 )))
+    		addLocalizableValidationError("Training Approval Manager", "validation.invalid.trainingApprovalManager");
+    }
+    
+    
+    
     
     /**
      * Validate the training manager is active and an authorised training approver
@@ -659,15 +682,25 @@ public class DealerStaffPositionActionBean extends BaseActionBean
 		
         return new ForwardResolution(APPOINTMENTS_JSP_BASE + "/showTrainingManagers.jsp");
     }
-
+    
+   
 	public List<TrainingApprovalMgr> getTrainingManagers() {
 		Long currentAppointmentTrainingManagerId = (getAppointment() != null && getAppointment().getAppointmentId() != null && getAppointment().getTrainingManager() != null ) 
 			? getAppointment().getTrainingManager().getAppointmentId() 
 			: null;
 			
-		if  (getAppointment().isDpGmrAppointment())
+		if  ((getDpGmrFlag() != null && getDpGmrFlag() == 1) || (getAppointment() !=null &&  getAppointment().isDpGmrAppointment()))
 		{
 			List<TrainingApprovalMgr> result = new ArrayList<TrainingApprovalMgr>();
+			
+			if  ((getAppointment() != null) &&  (getAppointment().getTrainingManager()!= null))
+			{
+				Appointment apt = appointmentServices.get(getAppointment().getTrainingManager().getAppointmentId());	
+				TrainingApprovalMgr mgr = AppointmentHelper.convert(apt);
+				result.add(mgr);
+				context.getRequest().setAttribute(INVALID_TRAINING_APPROVAL_MANAGER, getAppointment().getTrainingManager().getAppointmentId().toString());
+			}
+			
 			return result;
 		}
 			
@@ -680,23 +713,36 @@ public class DealerStaffPositionActionBean extends BaseActionBean
 			trainingManagers = getTrainingManagerIncludingCurrentAppointment(selectedDealerId, currentAppointmentTrainingManagerId);
 		}
 		
-		if ((getAppointment()!= null) && (getAppointment().getAppointmentId() != null) && (getAppointment().getPerson() != null))
+		if (((getAppointment()!= null) && (getAppointment().getPerson() != null)) || (getPersonId() != null))
 		{
 			Iterator<TrainingApprovalMgr> iter = trainingManagers.iterator();
 			
 			while (iter.hasNext()) {
-				if (!checkLoop(getAppointment().getPerson().getPersonId()+"", iter.next(), 5 ))
+				
+				TrainingApprovalMgr mgr = iter.next();
+			    
+			    String selfId = getPersonId()!=null? getPersonId(): getAppointment().getPerson().getPersonId()+"";
+				
+				if (!checkLoop(selfId, mgr, 5 ))
 				{
-					iter.remove();
+					
+					if (getAppointment()!= null && getAppointment().getTrainingManager()!= null && mgr.getAppointment_id().equals(getAppointment().getTrainingManager().getAppointmentId()))
+					{
+						context.getRequest().setAttribute(INVALID_TRAINING_APPROVAL_MANAGER, getAppointment().getTrainingManager().getAppointmentId().toString());
+					}
+					else
+					{
+					   iter.remove();
+					}
 				}
 				
-			}
-			
-			
+			}		
 		}
-				
+		
+
 		return trainingManagers;
 	}
+	
 
 	private void setSelectedDealerIdIfAvailable() {
 		if(selectedDealerId == null){
@@ -770,4 +816,13 @@ public class DealerStaffPositionActionBean extends BaseActionBean
 			
 	    return true;	
 	}
+
+	public String getPersonId() {
+		return personId;
+	}
+
+	public void setPersonId(String personId) {
+		this.personId = personId;
+	}	
+
 }
